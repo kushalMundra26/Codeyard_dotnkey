@@ -1,0 +1,14 @@
+# Every domain below was verified to serve a public Shopify /products.json on 2026-11-21.
+home: dotandkey
+brands:
+  dotandkey:   {name: "Dot & Key",     domain: "www.dotandkey.com",       color: "#FF803A"}
+  minimalist:  {name: "Minimalist",    domain: "beminimalist.co",         color: "#1E2022"}
+  foxtale:     {name: "Foxtale",       domain: "foxtale.in",              color: "#F4576C"}
+  deconstruct: {name: "Deconstruct",   domain: "thedeconstruct.in",       color: "#22BCE0"}
+  dermaco:     {name: "The Derma Co",  domain: "thedermaco.com",          color: "#64686E"}
+  plum:        {name: "Plum",          domain: "plumgoodness.com",        color: "#8A5A9E"}
+  reequil:     {name: "Re'equil",      domain: "reequil.com",             color: "#71B61A"}
+  pilgrim:     {name: "Pilgrim",       domain: "discoverpilgrim.com",     color: "#B08D57"}
+  aqualogica:  {name: "Aqualogica",    domain: "aqualogica.in",           color: "#2F7FD8"}
+  drsheths:    {name: "Dr. Sheth's",   domain: "drsheths.com",            color: "#D9822B"}
+  fixderma:    {name: "Fixderma",      domain: "fixderma.com",            color: "#3C8D7F"}

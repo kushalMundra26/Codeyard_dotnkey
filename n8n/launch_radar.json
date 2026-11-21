@@ -1,0 +1,139 @@
+{
+ "name": "SignalStudio · A · Launch Radar (daily 08:00 IST)",
+ "nodes": [
+  {
+   "parameters": {
+    "rule": {
+     "interval": [
+      {
+       "field": "cronExpression",
+       "expression": "0 8 * * *"
+      }
+     ]
+    }
+   },
+   "id": "860da970-2ecf-54cc-ab05-66f12de3ac95",
+   "name": "Every day 08:00",
+   "type": "n8n-nodes-base.scheduleTrigger",
+   "typeVersion": 1.2,
+   "position": [
+    0,
+    0
+   ]
+  },
+  {
+   "parameters": {
+    "method": "GET",
+    "url": "={{ $env.SIGNALSTUDIO_API || 'http://localhost:8000' }}/api/radar?category=sunscreen",
+    "sendHeaders": true,
+    "headerParameters": {
+     "parameters": [
+      {
+       "name": "X-API-Token",
+       "value": "={{ $env.SIGNALSTUDIO_TOKEN }}"
+      }
+     ]
+    },
+    "options": {}
+   },
+   "id": "ebef8958-72a5-5597-96b7-5f31190aa224",
+   "name": "GET /api/radar",
+   "type": "n8n-nodes-base.httpRequest",
+   "typeVersion": 4.2,
+   "position": [
+    240,
+    0
+   ]
+  },
+  {
+   "parameters": {
+    "conditions": {
+     "options": {
+      "caseSensitive": true,
+      "typeValidation": "loose"
+     },
+     "combinator": "and",
+     "conditions": [
+      {
+       "leftValue": "={{ $json.has_changes }}",
+       "rightValue": true,
+       "operator": {
+        "type": "boolean",
+        "operation": "true",
+        "singleValue": true
+       }
+      }
+     ]
+    },
+    "options": {}
+   },
+   "id": "eb792957-3b7c-5907-9493-b3e49f5422f5",
+   "name": "Any changes?",
+   "type": "n8n-nodes-base.if",
+   "typeVersion": 2,
+   "position": [
+    480,
+    0
+   ]
+  },
+  {
+   "parameters": {
+    "method": "POST",
+    "url": "=https://api.telegram.org/bot{{ $env.TELEGRAM_BOT_TOKEN }}/sendMessage",
+    "sendBody": true,
+    "specifyBody": "json",
+    "jsonBody": "={{ JSON.stringify({chat_id: $env.TELEGRAM_CHAT_ID, parse_mode: 'HTML', text: $json.telegram_text + '\\n' + $json.link}) }}",
+    "options": {}
+   },
+   "id": "e184850f-e336-5648-ade5-db53243137db",
+   "name": "Telegram alert",
+   "type": "n8n-nodes-base.httpRequest",
+   "typeVersion": 4.2,
+   "position": [
+    720,
+    -80
+   ]
+  }
+ ],
+ "connections": {
+  "Every day 08:00": {
+   "main": [
+    [
+     {
+      "node": "GET /api/radar",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "GET /api/radar": {
+   "main": [
+    [
+     {
+      "node": "Any changes?",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Any changes?": {
+   "main": [
+    [
+     {
+      "node": "Telegram alert",
+      "type": "main",
+      "index": 0
+     }
+    ],
+    []
+   ]
+  }
+ },
+ "settings": {
+  "executionOrder": "v1",
+  "timezone": "Asia/Kolkata"
+ },
+ "pinData": {}
+}

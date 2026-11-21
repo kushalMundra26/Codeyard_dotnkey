@@ -1,0 +1,17 @@
+# Editable from the Creative Studio sidebar. Drives every brief, ad, script and claims check.
+brand: "Dot & Key"
+personas:
+  - id: college_commuter
+    name: "Ananya, 21 — college commuter"
+    detail: "Delhi/Kolkata, rides metro + auto daily, oily-combination skin, hates white cast in selfies, budget ₹400–600."
+  - id: young_professional
+    name: "Riya, 27 — young professional"
+    detail: "Bengaluru/Mumbai, wears light makeup to office, wants no pilling under base, buys on Nykaa/Amazon, ₹500–800."
+  - id: outdoor_mom
+    name: "Meera, 34 — outdoor mom"
+    detail: "Tier-2 city, school runs + markets in harsh sun, sensitive skin, values protection + gentle formula, family value packs."
+tone: "Juicy, upbeat, skin-smart. Fruit-forward and playful but backed by actives. Short sentences. Talk like a friend who knows skincare."
+banned_words: ["cure", "cures", "guaranteed", "100% safe", "miracle", "permanent", "whitening", "fairness", "fair skin", "best in india", "no.1", "number one", "chemical-free"]
+languages: ["hi", "bn"]
+extra_languages: ["ta", "mr"]
+cta_options: ["Shop now", "Grab yours", "Try it today", "Add to cart"]

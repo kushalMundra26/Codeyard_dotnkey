@@ -1,0 +1,36 @@
+[theme]
+base = "light"
+primaryColor = "#1E2022"
+backgroundColor = "#FAF9F6"
+secondaryBackgroundColor = "#F3F1EC"
+textColor = "#1E2022"
+linkColor = "#1E2022"
+borderColor = "#E6E4DF"
+dataframeBorderColor = "#E6E4DF"
+dataframeHeaderBackgroundColor = "#FAF9F6"
+showWidgetBorder = true
+showSidebarBorder = true
+baseRadius = "6px"
+baseFontSize = 14
+font = "Plus Jakarta Sans:https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+headingFont = "Fraunces:https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap"
+headingFontWeights = 600
+chartCategoricalColors = ["#FF803A", "#22BCE0", "#F4576C", "#71B61A", "#F5C518", "#64686E"]
+redColor = "#F4576C"
+greenColor = "#71B61A"
+orangeColor = "#FF803A"
+blueColor = "#22BCE0"
+yellowColor = "#F5C518"
+
+[theme.sidebar]
+backgroundColor = "#FFFFFF"
+
+[server]
+headless = true
+maxUploadSize = 50
+
+[client]
+toolbarMode = "minimal"
+
+[browser]
+gatherUsageStats = false

@@ -1,0 +1,260 @@
+{
+ "name": "SignalStudio · B · Campaign approval",
+ "nodes": [
+  {
+   "parameters": {
+    "httpMethod": "POST",
+    "path": "signalstudio-approval",
+    "responseMode": "onReceived",
+    "options": {}
+   },
+   "id": "82b410c2-8e27-58e1-998b-c04d6734ac04",
+   "name": "Streamlit: Send for approval",
+   "type": "n8n-nodes-base.webhook",
+   "typeVersion": 2,
+   "position": [
+    0,
+    0
+   ],
+   "webhookId": "signalstudio-approval"
+  },
+  {
+   "parameters": {
+    "method": "POST",
+    "url": "={{ $env.SIGNALSTUDIO_API || 'http://localhost:8000' }}/api/campaign",
+    "sendHeaders": true,
+    "headerParameters": {
+     "parameters": [
+      {
+       "name": "X-API-Token",
+       "value": "={{ $env.SIGNALSTUDIO_TOKEN }}"
+      }
+     ]
+    },
+    "sendBody": true,
+    "specifyBody": "json",
+    "jsonBody": "={{ JSON.stringify({category: $json.body.category || 'sunscreen', product: $json.body.product, persona: $json.body.persona, make_video: false}) }}",
+    "options": {
+     "timeout": 600000
+    }
+   },
+   "id": "88ed6ba9-24f7-55cc-83aa-5b2b3f7f66cc",
+   "name": "POST /api/campaign",
+   "type": "n8n-nodes-base.httpRequest",
+   "typeVersion": 4.2,
+   "position": [
+    240,
+    0
+   ]
+  },
+  {
+   "parameters": {
+    "method": "POST",
+    "url": "=https://api.telegram.org/bot{{ $env.TELEGRAM_BOT_TOKEN }}/sendMessage",
+    "sendBody": true,
+    "specifyBody": "json",
+    "jsonBody": "={{ JSON.stringify({chat_id: $env.TELEGRAM_CHAT_ID, parse_mode: 'HTML', text: $json.telegram_caption + '\\nPreview: ' + $json.preview_url, reply_markup: {inline_keyboard: [[{text: '✅ Approve', url: $execution.resumeUrl + '?decision=approve'}, {text: '❌ Reject', url: $execution.resumeUrl + '?decision=reject'}]]}}) }}",
+    "options": {}
+   },
+   "id": "4060a873-69df-5263-9361-e51d20e2bb74",
+   "name": "Telegram: Approve / Reject",
+   "type": "n8n-nodes-base.httpRequest",
+   "typeVersion": 4.2,
+   "position": [
+    480,
+    0
+   ]
+  },
+  {
+   "parameters": {
+    "resume": "webhook",
+    "httpMethod": "GET",
+    "options": {}
+   },
+   "id": "aaada39e-d092-5eb1-b103-569d349b95b4",
+   "name": "Wait for decision",
+   "type": "n8n-nodes-base.wait",
+   "typeVersion": 1.1,
+   "position": [
+    720,
+    0
+   ],
+   "webhookId": "signalstudio-decision"
+  },
+  {
+   "parameters": {
+    "conditions": {
+     "options": {
+      "caseSensitive": true,
+      "typeValidation": "loose"
+     },
+     "combinator": "and",
+     "conditions": [
+      {
+       "leftValue": "={{ $json.query.decision }}",
+       "rightValue": "approve",
+       "operator": {
+        "type": "string",
+        "operation": "equals"
+       }
+      }
+     ]
+    },
+    "options": {}
+   },
+   "id": "6bbdb892-826f-5495-a664-9f0cc405aa27",
+   "name": "Approved?",
+   "type": "n8n-nodes-base.if",
+   "typeVersion": 2,
+   "position": [
+    960,
+    0
+   ]
+  },
+  {
+   "parameters": {
+    "method": "POST",
+    "url": "={{ $env.SIGNALSTUDIO_API || 'http://localhost:8000' }}/api/campaign/{{ $('POST /api/campaign').item.json.id }}/regional",
+    "sendHeaders": true,
+    "headerParameters": {
+     "parameters": [
+      {
+       "name": "X-API-Token",
+       "value": "={{ $env.SIGNALSTUDIO_TOKEN }}"
+      }
+     ]
+    },
+    "sendBody": true,
+    "specifyBody": "json",
+    "jsonBody": "={\"languages\": [\"hi\", \"bn\"]}",
+    "options": {
+     "timeout": 900000
+    }
+   },
+   "id": "b2a8566f-45dc-58e9-88e8-3c2da9bc9c69",
+   "name": "POST /api/campaign/{id}/regional",
+   "type": "n8n-nodes-base.httpRequest",
+   "typeVersion": 4.2,
+   "position": [
+    1200,
+    -80
+   ]
+  },
+  {
+   "parameters": {
+    "method": "POST",
+    "url": "=https://api.telegram.org/bot{{ $env.TELEGRAM_BOT_TOKEN }}/sendMessage",
+    "sendBody": true,
+    "specifyBody": "json",
+    "jsonBody": "={{ JSON.stringify({chat_id: $env.TELEGRAM_CHAT_ID, text: 'Campaign pack ready ✅ (' + $json.languages.join(', ') + ')\\n' + $json.pack_url}) }}",
+    "options": {}
+   },
+   "id": "2f330b0a-b066-548a-afed-7314607833f0",
+   "name": "Telegram: pack ready",
+   "type": "n8n-nodes-base.httpRequest",
+   "typeVersion": 4.2,
+   "position": [
+    1440,
+    -80
+   ]
+  },
+  {
+   "parameters": {
+    "method": "POST",
+    "url": "=https://api.telegram.org/bot{{ $env.TELEGRAM_BOT_TOKEN }}/sendMessage",
+    "sendBody": true,
+    "specifyBody": "json",
+    "jsonBody": "={{ JSON.stringify({chat_id: $env.TELEGRAM_CHAT_ID, text: 'Campaign rejected ❌ — back to the studio.'}) }}",
+    "options": {}
+   },
+   "id": "b21fac0f-2c81-5379-ae73-7061cff8b0ad",
+   "name": "Telegram: rejected",
+   "type": "n8n-nodes-base.httpRequest",
+   "typeVersion": 4.2,
+   "position": [
+    1200,
+    100
+   ]
+  }
+ ],
+ "connections": {
+  "Streamlit: Send for approval": {
+   "main": [
+    [
+     {
+      "node": "POST /api/campaign",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "POST /api/campaign": {
+   "main": [
+    [
+     {
+      "node": "Telegram: Approve / Reject",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Telegram: Approve / Reject": {
+   "main": [
+    [
+     {
+      "node": "Wait for decision",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Wait for decision": {
+   "main": [
+    [
+     {
+      "node": "Approved?",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Approved?": {
+   "main": [
+    [
+     {
+      "node": "POST /api/campaign/{id}/regional",
+      "type": "main",
+      "index": 0
+     }
+    ],
+    [
+     {
+      "node": "Telegram: rejected",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "POST /api/campaign/{id}/regional": {
+   "main": [
+    [
+     {
+      "node": "Telegram: pack ready",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  }
+ },
+ "settings": {
+  "executionOrder": "v1",
+  "timezone": "Asia/Kolkata"
+ },
+ "pinData": {}
+}

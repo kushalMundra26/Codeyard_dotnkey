@@ -1,0 +1,34 @@
+# Category definitions: how products are matched to a category, and the review topics we track.
+categories:
+  sunscreen:
+    label: "Sunscreen"
+    include: ["sunscreen", "sun screen", "spf", "sunstick", "sun stick", "sun gel", "sun serum", "uv ", "sun protection", "sunblock", "sun fluid", "sun mist", "sun drops"]
+    exclude: ["lip balm", "lip", "kit", "combo", "duo", "pack of", "trio", "regime", "routine", "set", "bundle", "gift", "body lotion", "hair", "shampoo", "moisturizer", "moisturiser", "cleanser", "face wash", "foundation", "cushion", "after sun", "serum spf", "mini"]
+    require_product_type_not: ["combo", "kit", "bundle"]
+    topics:
+      white_cast:        {label: "White cast",            keywords: ["white cast", "whitecast", "white layer", "ashy", "chalky", "safedi", "white tint", "grey cast", "no cast", "zero cast", "leaves white"]}
+      greasy_sticky:     {label: "Greasy / sticky",       keywords: ["greasy", "grease", "sticky", "oily", "heavy", "chip chip", "chipchipa", "oil"]}
+      texture:           {label: "Texture & absorption",  keywords: ["texture", "lightweight", "light weight", "absorb", "blend", "gel", "watery", "smooth", "spreads", "consistency", "thick", "runny"]}
+      fragrance:         {label: "Fragrance",             keywords: ["fragrance", "smell", "scent", "perfume", "khushboo", "odour", "odor", "smells"]}
+      breakouts:         {label: "Breakouts / irritation",keywords: ["breakout", "break out", "pimple", "acne", "rash", "itch", "irritat", "burn", "allergy", "allergic", "red", "dane", "redness", "bumps", "reaction"]}
+      eye_sting:         {label: "Eye sting",             keywords: ["eye", "eyes", "sting", "teary", "watery eyes", "aankh", "burning eyes"]}
+      makeup_pilling:    {label: "Pilling under makeup",  keywords: ["pilling", "pills", "makeup", "make up", "foundation", "primer", "base", "flakes", "balls up"]}
+      tan_protection:    {label: "Tan & sun protection",  keywords: ["tan", "tanning", "sunburn", "protect", "protection", "uv", "dark", "darken", "sun", "detan", "de-tan"]}
+      value:             {label: "Value for money",       keywords: ["price", "value", "expensive", "costly", "worth", "money", "cheap", "affordable", "quantity", "mehenga", "sasta", "paisa"]}
+      packaging:         {label: "Packaging",             keywords: ["packaging", "pack", "tube", "bottle", "pump", "leak", "cap", "nozzle", "container", "seal", "delivery", "damaged"]}
+      finish:            {label: "Finish (matte / dewy)", keywords: ["matte", "dewy", "glow", "shine", "shiny", "finish", "natural look", "radiant", "oily look"]}
+  lip_balm:
+    label: "Lip balm"
+    include: ["lip balm", "lip butter", "lip mask", "lip sleeping", "lip oil", "lip serum", "lip treatment"]
+    exclude: ["kit", "combo", "duo", "pack of", "trio", "set", "bundle", "gift", "scrub"]
+    require_product_type_not: ["combo", "kit", "bundle"]
+    topics:
+      hydration:   {label: "Hydration / dryness",  keywords: ["dry", "dryness", "moist", "hydrat", "chapped", "crack", "flaky", "soft", "nourish"]}
+      tint:        {label: "Tint & colour",        keywords: ["tint", "colour", "color", "shade", "pink", "pigment", "red"]}
+      longevity:   {label: "Stays on / longevity", keywords: ["long lasting", "lasts", "stay", "hours", "wear off", "reapply"]}
+      texture:     {label: "Texture",              keywords: ["sticky", "greasy", "texture", "thick", "smooth", "waxy", "jelly"]}
+      fragrance:   {label: "Flavour / fragrance",  keywords: ["smell", "fragrance", "scent", "taste", "flavour", "flavor", "sweet"]}
+      darkening:   {label: "Lip darkening",        keywords: ["dark lips", "pigmentation", "darkening", "lighten", "dark"]}
+      sun:         {label: "SPF / sun",            keywords: ["spf", "sun", "uv", "tan"]}
+      value:       {label: "Value for money",      keywords: ["price", "value", "expensive", "worth", "money", "quantity"]}
+      packaging:   {label: "Packaging",            keywords: ["packaging", "pack", "tube", "cap", "leak", "applicator"]}
