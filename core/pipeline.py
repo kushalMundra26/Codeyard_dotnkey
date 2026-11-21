@@ -193,7 +193,8 @@ def campaign_id(handle: str, persona_id: str, seed: int) -> str:
 
 
 def generate_campaign(cat: str, handle: str, persona_id: str | None = None, sizes=("square", "story", "aplus"),
-                      make_video: bool = True, seed: int = 7, progress=None, image_pref: list[str] | None = None) -> dict:
+                      make_video: bool = True, seed: int = 7, progress=None, image_pref: list[str] | None = None,
+                      render_ads: bool = True) -> dict:
     ins = load_insights(cat)
     if ins is None:
         raise RuntimeError(f"No insights for {cat}. Run analysis first.")
@@ -236,7 +237,7 @@ def generate_campaign(cat: str, handle: str, persona_id: str | None = None, size
     palette = brandkit.product_palette(ctx["product"])
     assets = []
     ok_variants = [v for v in variants if v["claims"]["verdict"] != "block"] or variants
-    for vi, v in enumerate(ok_variants):
+    for vi, v in enumerate(ok_variants if render_ads else []):
         for sz in sizes:
             _p(progress, "Static ads", f"variant {vi + 1} · {sz}")
             a = compose.render_ad(ctx["product"], v, sz, palette, cdir / f"ad_v{vi + 1}_{sz}_en.jpg", seed=seed + vi,
@@ -256,11 +257,59 @@ def generate_campaign(cat: str, handle: str, persona_id: str | None = None, size
             "product": {k: ctx["product"][k] for k in ("brand", "handle", "title", "price", "image", "url", "spec", "size", "unit")},
             "persona": persona, "brief": br, "ads": {"variants": variants, "assets": assets}, "claims_probe": probe_results,
             "ecom": ecom, "ecom_claims": ecom_claims, "audit": aud, "script15": s15, "script30": s30, "palette": palette,
-            "videos": vids, "regional": {}, "engines": engines, "status": "draft", "hero": None, "image_pref": image_pref}
+            "videos": vids, "regional": {}, "engines": engines, "status": "draft", "hero": None, "image_pref": image_pref,
+            "renders": {}, "selected": None, "fruit": _fruit(ctx["product"])}
     save_campaign(camp)
     pack.build_pack(cdir, camp)
     _p(progress, "Campaign", f"ready in {camp['elapsed_s']} s", 1.0)
     return camp
+
+
+def _fruit(product: dict) -> str:
+    ings = (product.get("spec") or {}).get("key_ingredients") or []
+    t = product["title"].lower()
+    for f in ("watermelon", "strawberry", "mango", "lime", "dragon fruit", "vitamin c", "cica", "blueberry", "papaya"):
+        if f in t or f in ings:
+            return f
+    return "fresh fruit"
+
+
+STYLES = compose.STYLES
+
+
+def ad_concepts(c: dict) -> list[dict]:
+    """The ad options shown as tiles: every variant with its claims verdict (blocked ones stay visible but locked)."""
+    return [{"index": i, **{k: v[k] for k in ("headline", "subline", "cta", "why", "evidence")},
+             "verdict": v["claims"]["verdict"], "reasons": v["claims"]["reasons"]} for i, v in enumerate(c["ads"]["variants"])]
+
+
+def render_choice(cid: str, variant_index: int, style: str, seed: int = 7, image_pref: list[str] | None = None,
+                  sizes=("square", "story", "aplus"), progress=None) -> list[dict]:
+    """Render ONE chosen concept in ONE chosen style in all three proportions. Cached: re-picking is instant."""
+    c = load_campaign(cid)
+    v = c["ads"]["variants"][variant_index]
+    if v["claims"]["verdict"] == "block":
+        raise ValueError("This concept was blocked by the claims checker.")
+    key = f"{variant_index}:{style}"
+    cdir = OUTPUTS / cid
+    have = c.get("renders", {}).get(key)
+    if have and all(Path(a["path"]).exists() for a in have):
+        assets = have
+    else:
+        assets = []
+        for sz in sizes:
+            _p(progress, "Rendering", f"{compose.SIZE_LABELS[sz]}")
+            assets.append(compose.render_ad(c["product"] | {"body_text": ""}, v, sz, c["palette"],
+                                            cdir / f"ad_c{variant_index + 1}_{style}_{sz}_en.jpg", seed=seed, style=style,
+                                            fruit=c.get("fruit") or _fruit(c["product"]),
+                                            engine_pref=image_pref or c.get("image_pref")))
+    c.setdefault("renders", {})[key] = assets
+    c["selected"] = {"variant": variant_index, "style": style}
+    # keep the classic asset list in sync so packs / API / Telegram previews use the chosen ad
+    c["ads"]["assets"] = [a | {"variant": variant_index} for a in assets]
+    save_campaign(c)
+    pack.build_pack(cdir, c)
+    return assets
 
 
 def save_campaign(c: dict) -> None:
@@ -297,7 +346,10 @@ def regional(cid: str, languages: list[str] | None = None, make_video: bool = Tr
     cdir = OUTPUTS / cid
     product = c["product"] | {"body_text": ""}
     s = c["script15"]
-    v = next((x for x in c["ads"]["variants"] if x["claims"]["verdict"] != "block"), c["ads"]["variants"][0])
+    sel = c.get("selected") or {}
+    v = c["ads"]["variants"][sel["variant"]] if sel else \
+        next((x for x in c["ads"]["variants"] if x["claims"]["verdict"] != "block"), c["ads"]["variants"][0])
+    style = sel.get("style")
     for lang in langs:
         _p(progress, "Translate", sarvam.LANG_NAMES.get(lang, lang))
         tv = {"headline": sarvam.translate(v["headline"], lang), "subline": sarvam.translate(v["subline"], lang),
@@ -307,7 +359,8 @@ def regional(cid: str, languages: list[str] | None = None, make_video: bool = Tr
         ads = []
         for sz in ("square", "story"):
             _p(progress, "Localized ad", f"{lang} · {sz}")
-            ads.append(compose.render_ad(product, tv, sz, c["palette"], cdir / f"ad_{sz}_{lang}.jpg", lang=lang, seed=7))
+            ads.append(compose.render_ad(product, tv, sz, c["palette"], cdir / f"ad_{sz}_{lang}.jpg", lang=lang, seed=7,
+                                         style=style, fruit=c.get("fruit", ""), engine_pref=c.get("image_pref")))
         vid = None
         if make_video:
             _p(progress, "Video", f"{lang} voiceover + render")

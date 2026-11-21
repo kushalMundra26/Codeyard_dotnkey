@@ -77,7 +77,7 @@ deterministic lexicon/template engines and says so. `SARVAM_API_KEY` → Hindi/B
 6. **🎲 Surprise me** picks a random real Dot & Key product (its real packshot and description) and runs the same chain.
 
 ## Automation
-- **n8n** (`npx n8n`, then *Import from file*): `n8n/launch_radar.json` (08:00 IST → `GET /api/radar` → IF → Telegram) and
+- **n8n** (`bash scripts/start_n8n.sh` — needs Node.js; reads keys from `.env` — then *Import from file*): `n8n/launch_radar.json` (08:00 IST → `GET /api/radar` → IF → Telegram) and
   `n8n/campaign_approval.json` (Webhook → `POST /api/campaign` → Telegram with Approve/Reject buttons pointing at the Wait node's
   `$execution.resumeUrl?decision=…` → IF → `POST /api/campaign/{id}/regional` → "pack ready ✅").
   Set n8n env vars: `SIGNALSTUDIO_API` (e.g. `http://localhost:8000`), `SIGNALSTUDIO_TOKEN` (= `API_TOKEN`),

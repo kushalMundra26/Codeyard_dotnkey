@@ -151,6 +151,12 @@ def structured(prompt: str, schema: Type[T], *, system: str = "", purpose: str =
     if prov == "anthropic":
         obj = _anthropic(system, prompt, schema, model, max_tokens, effort, purpose, images)
     else:
-        obj = _gemini(system, prompt, schema, model, max_tokens, purpose)
+        try:
+            obj = _gemini(system, prompt, schema, model, max_tokens, purpose)
+        except Exception:
+            fb = model_name(bulk=True)
+            if fb == model:
+                raise
+            obj = _gemini(system, prompt, schema, fb, max_tokens, purpose + ":fallback")  # e.g. Flash → Flash-Lite
     cache.put("llm", ck, obj.model_dump())
     return obj

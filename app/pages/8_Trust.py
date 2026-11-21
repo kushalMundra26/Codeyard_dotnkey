@@ -8,7 +8,7 @@ from core import costs
 from core.collect.reviews import coverage
 from core.config import INSIGHTS, brand_name
 
-ui.setup("Accuracy & method", "Trust")
+ui.setup("Accuracy & method", "Trust & settings")
 ins = ui.need_insights()
 ls = ins.get("label_stats", {})
 
@@ -37,6 +37,7 @@ cov = ui.df(list(coverage().values()))
 if not cov.empty:
     ok = int(cov["available"].astype(bool).sum())
     ui.takeaway(f"<b>{ok}</b> of {len(cov)} products have a public review feed; <b>{int(cov['collected'].sum()):,}</b> reviews collected.")
+    cov["shown_avg"] = pd.to_numeric(cov["shown_avg"], errors="coerce")
     cov["brand"] = cov["brand"].map(brand_name)
     cov["title"] = cov["title"].map(lambda t: ui.friendly_name(t, 60))
     st.dataframe(cov[["brand", "title", "provider", "available", "collected", "shown_count", "shown_avg", "reason"]], hide_index=True,

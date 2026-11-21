@@ -7,7 +7,7 @@ import streamlit as st
 from app import ui
 from core.config import LABELS, brand_name, category_cfg
 
-ui.setup("Label reviews", "Trust · gold set")
+ui.setup("Label reviews", "Trust & settings · gold set")
 ins = ui.need_insights()
 cat = ins["category"]
 topics = category_cfg(cat)["topics"]

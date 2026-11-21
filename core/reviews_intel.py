@@ -105,17 +105,31 @@ def label_reviews(reviews: list[dict], cat: str, use_llm: bool = True, batch_siz
     todo = [r for r in reviews if r["review_id"] not in store]
     engine = "llm" if (use_llm and llm.available()) else "lexicon"
     stats = {"engine": engine, "dropped_bad_quote": 0, "dropped_bad_topic": 0, "labelled": 0, "llm_errors": 0}
-    for i in range(0, len(todo), batch_size):
-        batch = todo[i:i + batch_size]
-        res: dict[str, list[dict]] = {}
-        eng = engine
-        if engine == "llm":
+    batches = [todo[i:i + batch_size] for i in range(0, len(todo), batch_size)]
+    results: dict[int, dict] = {}
+    if engine == "llm" and batches:
+        # label batches concurrently (each call is independent and cached); 6 workers fits the free tier
+        from concurrent.futures import ThreadPoolExecutor, as_completed
+
+        def work(ix):
             try:
-                res = llm_label_batch(batch, cat)
+                return ix, llm_label_batch(batches[ix], cat), None
             except Exception as e:  # fall back per batch, keep going
-                stats["llm_errors"] += 1
-                stats["last_error"] = str(e)[:300]
-                eng = "lexicon"
+                return ix, {}, str(e)[:300]
+        done_n = 0
+        with ThreadPoolExecutor(max_workers=6) as ex:
+            for fut in as_completed([ex.submit(work, i) for i in range(len(batches))]):
+                ix, res_, err = fut.result()
+                results[ix] = res_
+                if err:
+                    stats["llm_errors"] += 1
+                    stats["last_error"] = err
+                done_n += len(batches[ix])
+                if progress:
+                    progress(done_n, len(todo))
+    for bi, batch in enumerate(batches):
+        res = results.get(bi, {})
+        eng = "llm" if res else "lexicon"
         for r in batch:
             if eng == "llm" and r["review_id"] in res:
                 raw = res[r["review_id"]]
@@ -133,8 +147,6 @@ def label_reviews(reviews: list[dict], cat: str, use_llm: bool = True, batch_siz
                 kept.append(t)
             store[r["review_id"]] = {"engine": eng if r["review_id"] in res else "lexicon", "topics": kept}
             stats["labelled"] += 1
-        if progress:
-            progress(min(i + batch_size, len(todo)), len(todo))
         path.write_text(json.dumps(store, ensure_ascii=False), encoding="utf-8")
     flat = []
     by_id = {r["review_id"]: r for r in reviews}

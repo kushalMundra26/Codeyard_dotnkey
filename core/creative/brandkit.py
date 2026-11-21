@@ -93,7 +93,8 @@ def cutout(img: Image.Image, tol: int = 28) -> Image.Image:
     rgb = im.convert("RGB")
     corners = [rgb.getpixel(p) for p in ((2, 2), (w - 3, 2), (2, h - 3), (w - 3, h - 3))]
     bg = tuple(int(np.median([c[i] for c in corners])) for i in range(3))
-    if sum(bg) / 3 < 170:  # dark/busy background: keep as a rounded card instead of a cut-out
+    spread = max(sum(abs(a[i] - b[i]) for i in range(3)) for a in corners for b in corners)
+    if sum(bg) / 3 < 170 or spread > 90:  # dark or multi-colour (lifestyle) packshot: rounded card, no ragged cut-out  # dark/busy background: keep as a rounded card instead of a cut-out
         mask = Image.new("L", (w, h), 0)
         ImageDraw.Draw(mask).rounded_rectangle((0, 0, w, h), radius=int(min(w, h) * 0.06), fill=255)
         im.putalpha(mask)

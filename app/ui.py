@@ -33,9 +33,10 @@ TOKENS = {
 SENT_SCALE = [[0, "#F4576C"], [0.5, "#EDEBE6"], [1, "#71B61A"]]
 
 PAGES = {
-    "overview": "pages/1_Overview.py", "product": "pages/2_Product.py", "strategy": "pages/3_Strategy.py",
-    "audit": "pages/4_Audit.py", "studio": "pages/5_Studio.py", "radar": "pages/6_Radar.py",
-    "packs": "pages/7_Packs.py", "trust": "pages/8_Trust.py", "label": "pages/9_Label.py",
+    "start": "pages/r_start.py", "market": "pages/r_market.py", "product": "pages/i_product.py",
+    "swot": "pages/i_swot.py", "audit": "pages/i_audit.py", "brief": "pages/c_brief.py", "ads": "pages/c_ads.py",
+    "copy": "pages/c_copy.py", "approve": "pages/c_approve.py", "trust": "pages/8_Trust.py", "label": "pages/9_Label.py",
+    "settings": "pages/10_Settings.py",
 }
 
 CSS = """
@@ -296,8 +297,7 @@ def need_insights() -> dict:
     ins = insights()
     if not ins:
         empty_state("No analysis for this category yet",
-                    "Every page here reads the analysis output. Run it once from Market overview — in Demo mode it uses the "
-                    "saved catalogue snapshots and takes seconds.", "overview", "Go to Market overview")
+                    "Every page here reads the analysis output. Start with Research.", "start", "Start with Research")
         st.stop()
     return ins
 
@@ -329,126 +329,164 @@ def snapshot_date() -> str | None:
     return max(ds) if ds else None
 
 
-# ---------------- shell ----------------
+# ---------------- shell: guided flow ----------------
 
-def setup(title: str, eyebrow: str = "", step: str | None = None, badge: bool = True) -> dict | None:
-    """CSS + sidebar + page header + flow progress. Returns the insights dict (or None)."""
-    st.markdown(CSS, unsafe_allow_html=True)
-    ins = sidebar()
-    passcode_box()
-    if callable(step):
-        step = step(ins)
-    if step in ("insight",):
-        st.session_state["seen_insight"] = True
-    cat = st.session_state.get("cat", "sunscreen").replace("_", " ")
-    eb = f'<div class="eyebrow">{esc(eyebrow)}{" · " + esc(cat) if eyebrow else esc(cat)}</div>'
-    st.markdown(f'{eb}<div class="ph"><h1>{esc(title)}</h1>{mode_badge(ins) if badge else ""}</div>', unsafe_allow_html=True)
-    if step:
-        flow_progress(step, ins)
+FLOW = [("research_done", "Research", "start"), ("insight_done", "Insight", "product"),
+        ("brief_done", "Brief", "brief"), ("render_done", "Ads", "ads"), ("approved", "Approve", "approve")]
+
+FLOW_CSS = """
+<style>
+section[data-testid="stSidebar"], [data-testid="stSidebarCollapsedControl"], [data-testid="stExpandSidebarButton"]{ display:none !important; }
+.block-container{ max-width:1120px !important; padding-left:clamp(16px,3vw,40px) !important; padding-right:clamp(16px,3vw,40px) !important;
+  padding-top:3.6rem !important; }
+h1{ font-size:2rem !important; }
+.topline{ display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; margin:0 0 18px 0; }
+.steps{ display:flex; gap:0; flex-wrap:wrap; font-size:12px; color:var(--slate); font-weight:600; }
+.steps span{ padding:2px 10px 2px 0; margin-right:10px; border-right:1px solid var(--rule); white-space:nowrap; }
+.steps span:last-child{ border-right:none; }
+.steps .done{ color:var(--ink); } .steps .done:before{ content:"✓ "; color:var(--mint); }
+.steps .cur{ color:var(--ink); box-shadow: inset 0 -2px 0 var(--orange); }
+.intro{ font-size:16px; line-height:1.55; color:var(--slate); max-width:64ch; margin:2px 0 22px 0; }
+.empty{ padding:28px 28px; border-style:solid; border-color:var(--rule); }
+.reason{ background:var(--surface); border:1px solid var(--rule); border-radius:8px; padding:20px 24px; margin:8px 0 18px 0; }
+.reason .h{ font-family:Fraunces,Georgia,serif; font-size:18px; font-weight:600; margin-bottom:10px; }
+.reason .l{ font-size:14px; line-height:1.5; padding:5px 0; color:var(--ink); }
+.reason .l .tick{ color:var(--mint); font-weight:700; margin-right:8px; }
+.reason .l.now{ color:var(--slate); }
+.reason .l.now .tick{ color:var(--orange); }
+.reason .l b{ font-variant-numeric:tabular-nums; }
+[class*="st-key-tile"]{ background:var(--surface); border-radius:8px; transition:outline-color 120ms; }
+[class*="st-key-tilesel"]{ outline:2px solid var(--ink); outline-offset:-1px; }
+[class*="st-key-tileoff"]{ opacity:.55; }
+.tile-img{ width:100%; aspect-ratio:1/1; max-height:260px; object-fit:contain; background:var(--canvas); border-radius:6px; border:1px solid var(--rule); }
+.tile-t{ font-weight:700; font-size:15px; line-height:1.3; margin-top:8px; }
+.tile-s{ font-size:12.5px; color:var(--slate); line-height:1.45; margin-top:2px; }
+.tile-big{ font-family:Fraunces,Georgia,serif; font-size:20px; font-weight:600; line-height:1.2; }
+.cat-ico{ font-family:Fraunces,Georgia,serif; font-size:26px; font-weight:600; }
+.next-row{ border-top:1px solid var(--rule); margin-top:28px; padding-top:18px; }
+@media (max-width: 640px){ .block-container{ padding-top:3rem !important; } h1{ font-size:1.6rem !important; } }
+</style>
+"""
+
+
+def is_live() -> bool:
+    return st.session_state.get("mode") == "Live"
+
+
+def flags() -> dict:
+    return {k: bool(st.session_state.get(k)) for k, *_ in FLOW}
+
+
+def setup(title: str, eyebrow: str = "", step: str | None = None, badge: bool = True, intro: str = "") -> dict | None:
+    """CSS + top line (progress + mode badge) + page header. Returns the insights dict (or None)."""
+    st.markdown(CSS + FLOW_CSS, unsafe_allow_html=True)
+    st.session_state.setdefault("cat", "sunscreen")
+    st.session_state.setdefault("mode", "Demo")
+    ins = insights(st.session_state["cat"])
+    f = flags()
+    cells = []
+    for k, label, key in FLOW:
+        cls = "done" if f[k] else ("cur" if key == step else "")
+        cells.append(f'<span class="{cls}">{esc(label)}</span>')
+    st.markdown(f'<div class="topline"><div class="steps">{"".join(cells)}</div>{mode_badge(ins) if badge else ""}</div>',
+                unsafe_allow_html=True)
+    if eyebrow:
+        st.markdown(f'<div class="eyebrow">{esc(eyebrow)}</div>', unsafe_allow_html=True)
+    st.markdown(f"# {title}")
+    if intro:
+        st.markdown(f'<div class="intro">{intro}</div>', unsafe_allow_html=True)
     return ins
 
 
 def mode_badge(ins: dict | None) -> str:
-    live = st.session_state.get("mode") == "Live"
+    live = is_live()
     dot = TOKENS["orange"] if live else TOKENS["mute"]
     parts = [f'<span class="dot" style="background:{dot}"></span><b>{"Live" if live else "Demo"}</b>']
-    sd = snapshot_date()
-    if sd:
-        parts.append(f"snapshot {sd}")
-    if ins:
-        parts.append(f'labels <b>{esc((ins.get("label_stats") or {}).get("engine", "?"))}</b>')
-    prov = llm.provider()
-    parts.append(f'LLM <b>{esc(prov if prov != "none" else "off")}</b>')
+    if not live:
+        parts.append("saved data · no paid calls")
     return f'<span class="modebadge">{" · ".join(parts)}</span>'
 
 
-FLOW = [("research", "Research", "Catalogues + reviews"), ("insight", "Insight", "Rivals, topics, SWOT"),
-        ("brief", "Brief", "Evidence-led brief"), ("content", "Content", "Ads, copy, video"), ("approve", "Approve", "Review & ship")]
+def gate(flag: str, title: str, body: str, page: str, cta: str):
+    """Calm empty state pointing at the previous step; stops the page."""
+    if st.session_state.get(flag):
+        return
+    empty_state(title, body)
+    if st.button(f"{cta}  →", type="primary", key=f"gate_{flag}_{page}"):
+        st.switch_page(PAGES[page])
+    st.stop()
 
 
-def flow_state(ins: dict | None) -> dict:
-    s = {k: (False, "") for k, *_ in FLOW}
-    if not ins:
-        return s | {"research": (False, "analysis not run")}
-    n_rev = sum(ins["metrics"].get("n_reviews", {}).values())
-    s["research"] = (True, f"{len(ins['products'])} SKUs · {n_rev:,} reviews")
-    s["insight"] = (bool(st.session_state.get("seen_insight")), "product deep-dive & SWOT")
-    p = current_product(ins)
-    camp = current_campaign(p["handle"])
-    if camp:
-        s["insight"] = (True, s["insight"][1])
-        s["brief"] = (True, camp["persona"]["name"].split(",")[0] + " persona")
-        langs = list(camp.get("regional", {}).keys())
-        n_ads = len(camp["ads"]["assets"])
-        vids = sum(1 for v in camp.get("videos", []) if v.get("path"))
-        s["content"] = (n_ads > 0, f"{n_ads} ads · {vids} video" + (f" · {'/'.join(langs)}" if langs else " · EN only"))
-        st_ = camp.get("status") or "draft"
-        s["approve"] = (st_ == "approved", {"approved": "approved", "rejected": "rejected"}.get(
-            st_, "sent — awaiting reply" if st.session_state.get(f"sent_{camp['id']}") else "not sent yet"))
-    else:
-        s["brief"] = (False, "no campaign for this product")
-        s["content"] = (False, "—")
-        s["approve"] = (False, "—")
-    return s
-
-
-def flow_progress(current: str, ins: dict | None = None):
-    s = flow_state(ins)
-    cells = []
-    for i, (k, label, _) in enumerate(FLOW):
-        done, detail = s[k]
-        cls = ("done " if done else "") + ("cur" if k == current else "")
-        cells.append(f'<div class="st {cls}"><div class="n">Step {i + 1}</div><div class="l">{esc(label)}</div>'
-                     f'<div class="d">{esc(detail)}</div></div>')
-    st.markdown(f'<div class="flow">{"".join(cells)}</div>', unsafe_allow_html=True)
-
-
-def next_step(page: str, label: str, why: str = ""):
-    """One clear call-to-action at the end of a page."""
-    st.markdown('<div class="sect"></div>', unsafe_allow_html=True)
+def continue_to(page: str, label: str, why: str = "", key: str | None = None):
+    st.markdown('<div class="next-row"></div>', unsafe_allow_html=True)
     c1, c2 = st.columns([0.62, 0.38], vertical_alignment="center")
     if why:
-        c1.markdown(f'<div class="meta"><span class="eyebrow">Next step</span><br/>{why}</div>', unsafe_allow_html=True)
-    c2.page_link(PAGES[page], label=f"{label}  →", width="stretch")
+        c1.markdown(f'<div class="meta"><span class="eyebrow">Next</span><br/>{why}</div>', unsafe_allow_html=True)
+    if c2.button(f"{label}  →", type="primary", width="stretch", key=key or f"next_{page}"):
+        st.switch_page(PAGES[page])
 
 
-def sidebar() -> dict | None:
-    with st.sidebar:
-        st.markdown('<div class="wordmark">DOT <span>&amp;</span> KEY · SIGNALSTUDIO</div>'
-                    '<div class="meta" style="margin-bottom:8px">Market signal → evidence-led content</div>',
-                    unsafe_allow_html=True)
-        from core.config import categories
-        cats = [c for c in pipeline.available_categories() if c in categories()] or ["sunscreen"]
-        cur_cat = st.session_state.get("cat")
-        cat = st.selectbox("Category", cats, index=cats.index(cur_cat) if cur_cat in cats else 0,
-                           format_func=lambda c: c.replace("_", " ").title(), key="cat_select")
-        st.session_state["cat"] = cat
-        ins = insights(cat)
-        if ins:
-            home = home_products(ins)
-            handles = [p["handle"] for p in home]
-            by_h = {p["handle"]: p for p in home}
-            cur = st.session_state.get("handle")
-            if cur not in handles:
-                counts = {r["handle"]: r["n"] for r in ins["metrics"].get("ratings", []) if r["brand"] == home_brand()}
-                cur = max(handles, key=lambda h: counts.get(h, 0)) if handles else None
-            if handles:
-                h = st.selectbox("Dot & Key product", handles, index=handles.index(cur),
-                                 format_func=lambda h: f"{friendly_name(by_h[h]['title'], 40)} · {inr(by_h[h]['price'])}",
-                                 help="Every product-scoped page (deep-dive, audit, studio) follows this selection.")
-                st.session_state["handle"] = h
-        st.radio("Data mode", ["Demo", "Live"], horizontal=True, key="mode",
-                 help="Demo replays saved catalogue snapshots and review files — no keys, seconds. "
-                      "Live re-scrapes 11 stores and review feeds, then re-runs every layer.")
-        prov = llm.provider()
-        usd = costs.total_usd()
-        lines = [f'LLM · <b>{esc(prov)}</b> {esc(llm.model_name()) if prov != "none" else "(lexicon + templates)"}']
-        if ins:
-            lines.append(f'Last run {esc(ins.get("generated_at", ""))} · {ins.get("elapsed_s", 0):.0f} s')
-        lines.append(f'Spend <span class="num">₹{usd * costs.INR_PER_USD:,.0f} (${usd:.2f})</span>')
-        st.markdown('<div class="meta" style="border-top:1px solid var(--rule);padding-top:8px;margin-top:4px">'
-                    + "<br/>".join(lines) + "</div>", unsafe_allow_html=True)
-    return ins
+def reasoning(title: str, lines: list[str], seconds: float = 7.0, box=None):
+    """Reveal a narrative of real numbers line by line (trusted HTML lines)."""
+    import time
+    box = box or st.empty()
+    per = max(0.35, seconds / max(1, len(lines)))
+    for i in range(len(lines) + 1):
+        out = []
+        for j, ln in enumerate(lines[:i + 1]):
+            if j < i:
+                out.append(f'<div class="l"><span class="tick">✓</span>{ln}</div>')
+            elif j < len(lines):
+                out.append(f'<div class="l now"><span class="tick">→</span>{ln}</div>')
+        box.markdown(f'<div class="reason"><div class="h">{esc(title)}</div>{"".join(out)}</div>', unsafe_allow_html=True)
+        if i < len(lines):
+            time.sleep(per)
+    return box
+
+
+def research_lines(ins: dict, handle: str) -> list[str]:
+    m = ins["metrics"]
+    n_rev = sum(m.get("n_reviews", {}).values())
+    brands_ = {p["brand"] for p in ins["products"]}
+    cs = m.get("complaint_share") or []
+    p = next((x for x in ins["products"] if x["handle"] == handle), ins["products"][0])
+    ctx = context(ins, handle)
+    out = [f"Loaded <b>{sum(ins.get('catalog_counts', {}).values()):,}</b> products from <b>{len(brands_)}</b> brand catalogues "
+           f"and kept <b>{len(ins['products'])}</b> {esc(ins['category'].replace('_', ' '))} SKUs",
+           f"Read <b>{n_rev:,}</b> customer reviews from <b>{len(m.get('n_reviews', {}))}</b> brands' own review feeds",
+           f"Labelled <b>{len(ins.get('labels') or []):,}</b> topic × sentiment mentions, each with an exact quote"]
+    if cs:
+        out.append(f"<b>{esc(cs[0]['label'])}</b> is the category's #1 complaint (<b>{cs[0]['share_of_complaints'] * 100:.0f}%</b> of complaints)"
+                   + (f", then {esc(cs[1]['label'].lower())} (<b>{cs[1]['share_of_complaints'] * 100:.0f}%</b>)" if len(cs) > 1 else ""))
+    if ctx["rivals"]:
+        r0 = ctx["rivals"][0]
+        out.append(f"Matched <b>{len(ctx['rivals'])}</b> closest rivals to {esc(friendly_name(p['title'], 40))} — nearest is "
+                   f"<b>{esc(r0['brand_name'])}</b> (match {r0['match']['score']:.2f}, {esc(r0['match']['reason'])})")
+    out.append("Built the price ladder (₹/ml) and the marketplace snapshot")
+    return out
+
+
+def selected_handle(ins: dict) -> str:
+    h = st.session_state.get("handle")
+    if h and any(p["handle"] == h for p in ins["products"]):
+        return h
+    return home_products(ins)[0]["handle"]
+
+
+def demo_campaign(handle: str, persona_id: str | None = None) -> dict | None:
+    """Latest saved campaign for the product (and persona if given); prefers college_commuter."""
+    cs = campaigns_for(handle)
+    if persona_id:
+        cs = [c for c in cs if f"-{persona_id}-" in c["id"]]
+    else:
+        cs = sorted(cs, key=lambda c: "college_commuter" not in c["id"])
+    return pipeline.load_campaign(cs[0]["id"]) if cs else None
+
+
+def active_campaign() -> dict | None:
+    cid = st.session_state.get("campaign_id")
+    return pipeline.load_campaign(cid) if cid else None
+
 
 
 # ---------------- building blocks ----------------
@@ -472,7 +510,8 @@ def empty_state(title: str, body: str, page: str | None = None, cta: str | None 
     st.markdown(f'<div class="empty"><div class="t">{esc(title)}</div><div class="meta">{body}</div></div>',
                 unsafe_allow_html=True)
     if page and cta:
-        st.page_link(PAGES[page], label=f"{cta}  →")
+        if st.button(f"{cta}  →", key=f"empty_{page}_{abs(hash(title)) % 10000}"):
+            st.switch_page(PAGES[page])
 
 
 def tag(text: str, kind: str = "") -> str:
@@ -711,7 +750,7 @@ def passcode_box():
     code = os.environ.get("APP_PASSCODE", "")
     if not code or st.session_state.get("unlocked"):
         return
-    with st.sidebar:
+    with st.container():
         v = st.text_input("Demo passcode", type="password", help="Needed to generate new content on the hosted demo.")
         if v and v == code:
             st.session_state["unlocked"] = True

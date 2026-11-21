@@ -7,11 +7,27 @@ from core import admin, costs, marketplace, pipeline
 from core.collect import catalog
 from core.config import brand_list, brand_name, env
 
-ui.setup("Settings & data", "Setup", badge=False)
+ui.setup("Settings & data", "Trust & settings")
+
+# ---------------- mode ----------------
+ui.section("Data mode", "Demo is what the judges use", first=True)
+
+
+def _set_mode():
+    st.session_state["mode"] = st.session_state["mode_w"]
+
+
+st.session_state["mode_w"] = st.session_state.get("mode", "Demo")
+st.radio("Mode", ["Demo", "Live"], horizontal=True, key="mode_w", on_change=_set_mode, label_visibility="collapsed")
+st.markdown('<div class="meta">' + ("<b>Live</b>: every Run button calls the real pipeline — scrapes, LLM and image calls, "
+                                    "with spend logged below." if ui.is_live() else
+                                    "<b>Demo</b>: every Run button replays the saved analysis and campaign in ./data. "
+                                    "No network, no keys, no spend.") + "</div>", unsafe_allow_html=True)
+ui.passcode_box()
 hosted = bool(os.environ.get("STREAMLIT_SHARING_MODE") or os.environ.get("HOSTNAME", "").startswith("streamlit"))
 
 # ---------------- connections ----------------
-ui.section("Connections", "keys live in .env locally, or in Streamlit Secrets when hosted", first=True)
+ui.section("Connections", "keys live in .env locally, or in Streamlit Secrets when hosted")
 ks = admin.key_status()
 n_set = sum(k["set"] for k in ks)
 ui.takeaway(f"<b>{n_set} of {len(ks)}</b> integrations configured · AI engine: <b>{ui.esc(__import__('core.llm', fromlist=['x']).provider())}</b>")

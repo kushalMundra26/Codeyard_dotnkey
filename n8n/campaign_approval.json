@@ -53,7 +53,7 @@
     "url": "=https://api.telegram.org/bot{{ $env.TELEGRAM_BOT_TOKEN }}/sendMessage",
     "sendBody": true,
     "specifyBody": "json",
-    "jsonBody": "={{ JSON.stringify({chat_id: $env.TELEGRAM_CHAT_ID, parse_mode: 'HTML', text: $json.telegram_caption + '\\nPreview: ' + $json.preview_url, reply_markup: {inline_keyboard: [[{text: '✅ Approve', url: $execution.resumeUrl + '?decision=approve'}, {text: '❌ Reject', url: $execution.resumeUrl + '?decision=reject'}]]}}) }}",
+    "jsonBody": "={{ JSON.stringify({chat_id: $env.TELEGRAM_CHAT_ID, parse_mode: 'HTML', text: $json.telegram_caption + '\\nPreview: ' + $json.preview_url + '\\n\\n✅ Approve: ' + $execution.resumeUrl + '?decision=approve' + '\\n❌ Reject: ' + $execution.resumeUrl + '?decision=reject', reply_markup: $execution.resumeUrl.startsWith('https') ? {inline_keyboard: [[{text: '✅ Approve', url: $execution.resumeUrl + '?decision=approve'}, {text: '❌ Reject', url: $execution.resumeUrl + '?decision=reject'}]]} : undefined}) }}",
     "options": {}
    },
    "id": "4060a873-69df-5263-9361-e51d20e2bb74",

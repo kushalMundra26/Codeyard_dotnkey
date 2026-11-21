@@ -33,10 +33,18 @@ def build_pack(campaign_dir: Path, campaign: dict) -> Path:
     md = campaign_dir / "brief.md"
     md.write_text(brief_markdown(campaign), encoding="utf-8")
     z = campaign_dir / f"campaign_pack_{campaign['id']}.zip"
-    with zipfile.ZipFile(z, "w", zipfile.ZIP_DEFLATED) as zf:
-        for p in campaign_dir.rglob("*"):
-            if p.is_file() and p.suffix.lower() in (".jpg", ".png", ".mp4", ".md", ".json", ".txt") and p != z \
-                    and not p.name.startswith(("frame_", "hero_norm", "hero_raw", "hero_card", "hero_joined")):
-                zf.write(p, p.relative_to(campaign_dir))
+    # what a marketer ships: the chosen ad in 3 sizes, regional ads, final videos, brief + copy (no intermediates)
+    keep = {Path(a["path"]).name for a in campaign["ads"].get("assets", [])}
+    keep |= {Path(a["path"]).name for r in campaign.get("regional", {}).values() for a in r.get("ads", [])}
+    keep |= {Path(v["path"]).name for v in campaign.get("videos", []) if v.get("path")}
+    keep |= {Path(r["video"]["path"]).name for r in campaign.get("regional", {}).values() if (r.get("video") or {}).get("path")}
+    if (campaign.get("hero") or {}).get("path"):
+        keep.add(Path(campaign["hero"]["path"]).name)
+    keep |= {"brief.md", "campaign.json"}
+    with zipfile.ZipFile(z, "w", zipfile.ZIP_STORED) as zf:  # jpg/mp4 are already compressed
+        for name in sorted(keep):
+            p = campaign_dir / name
+            if p.exists():
+                zf.write(p, name)
         zf.writestr("copy.json", json.dumps({k: campaign[k] for k in ("ecom", "ads", "brief")}, ensure_ascii=False, indent=1))
     return z

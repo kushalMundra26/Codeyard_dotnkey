@@ -1,0 +1,1070 @@
+{
+ "dotandkey:watermelon-cooling-spf-50-face-sunscreen": {
+  "spf": 50,
+  "pa": "PA++++",
+  "filter_type": null,
+  "finish": null,
+  "tinted": null,
+  "format": null,
+  "key_ingredients": [
+   "watermelon"
+  ],
+  "skin_types": [
+   "oily"
+  ],
+  "claims": [],
+  "fragrance_free": null,
+  "reef_safe": null,
+  "source": "rules+llm"
+ },
+ "minimalist:light-fluid-spf-50-sunscreen": {
+  "spf": 50,
+  "pa": null,
+  "filter_type": null,
+  "finish": null,
+  "tinted": null,
+  "format": "fluid",
+  "key_ingredients": [],
+  "skin_types": [],
+  "claims": [],
+  "fragrance_free": null,
+  "reef_safe": null,
+  "source": "rules+llm"
+ },
+ "foxtale:matte-finish-sunscreen": {
+  "spf": 70,
+  "pa": "PA++++",
+  "filter_type": null,
+  "finish": null,
+  "tinted": null,
+  "format": "gel-cream",
+  "key_ingredients": [
+   "niacinamide"
+  ],
+  "skin_types": [
+   "oily"
+  ],
+  "claims": [],
+  "fragrance_free": null,
+  "reef_safe": null,
+  "source": "rules+llm"
+ },
+ "deconstruct:gel-sunscreen-for-oily-skin-30gm": {
+  "spf": 50,
+  "pa": "PA++++",
+  "filter_type": null,
+  "finish": null,
+  "tinted": null,
+  "format": "gel",
+  "key_ingredients": [],
+  "skin_types": [
+   "oily"
+  ],
+  "claims": [
+   "in-vivo tested"
+  ],
+  "fragrance_free": null,
+  "reef_safe": null,
+  "source": "rules+llm"
+ },
+ "deconstruct:salicylic-acid-gel-sunscreen": {
+  "spf": null,
+  "pa": null,
+  "filter_type": null,
+  "finish": null,
+  "tinted": null,
+  "format": "gel",
+  "key_ingredients": [
+   "salicylic acid"
+  ],
+  "skin_types": [],
+  "claims": [],
+  "fragrance_free": null,
+  "reef_safe": null,
+  "source": "rules+llm"
+ },
+ "dermaco:1-hyaluronic-sunscreen-aqua-gel-with-spf-50-pa-80g": {
+  "spf": 50,
+  "pa": "PA++++",
+  "filter_type": null,
+  "finish": "dewy",
+  "tinted": null,
+  "format": "gel",
+  "key_ingredients": [
+   "hyaluronic acid"
+  ],
+  "skin_types": [
+   "all"
+  ],
+  "claims": [
+   "broad spectrum",
+   "dewy finish",
+   "in-vivo tested"
+  ],
+  "fragrance_free": null,
+  "reef_safe": null,
+  "source": "rules+llm"
+ },
+ "plum:green-tea-zinc-super-matte-spf-50-sunscreen-gel-for-oily-acne-prone-skin-30g": {
+  "spf": 50,
+  "pa": null,
+  "filter_type": null,
+  "finish": "matte",
+  "tinted": null,
+  "format": "gel",
+  "key_ingredients": [
+   "green tea",
+   "zinc"
+  ],
+  "skin_types": [
+   "oily"
+  ],
+  "claims": [
+   "matte finish",
+   "super-matte"
+  ],
+  "fragrance_free": null,
+  "reef_safe": null,
+  "source": "rules+llm"
+ },
+ "reequil:oxybenzone-free-sunscreen-spf-50-for-oily-acne-prone-skin": {
+  "spf": 50,
+  "pa": "PA+++",
+  "filter_type": null,
+  "finish": null,
+  "tinted": null,
+  "format": null,
+  "key_ingredients": [],
+  "skin_types": [],
+  "claims": [
+   "omc free",
+   "oxybenzone free"
+  ],
+  "fragrance_free": null,
+  "reef_safe": null,
+  "source": "rules+llm"
+ },
+ "pilgrim:5-vitamin-c-complex-brightening-serum-sunscreen-spf-50-pa": {
+  "spf": 50,
+  "pa": "PA++++",
+  "filter_type": null,
+  "finish": null,
+  "tinted": null,
+  "format": "serum",
+  "key_ingredients": [
+   "vitamin c"
+  ],
+  "skin_types": [],
+  "claims": [
+   "brightening"
+  ],
+  "fragrance_free": null,
+  "reef_safe": null,
+  "source": "rules+llm"
+ },
+ "aqualogica:illuminate-dewy-sunscreen-spf-50-pa-with-wild-berries-alpha-arbutin-125-g": {
+  "spf": 50,
+  "pa": "PA++++",
+  "filter_type": null,
+  "finish": "dewy",
+  "tinted": null,
+  "format": null,
+  "key_ingredients": [
+   "alpha arbutin",
+   "wild berries"
+  ],
+  "skin_types": [],
+  "claims": [
+   "dewy finish"
+  ],
+  "fragrance_free": null,
+  "reef_safe": null,
+  "source": "rules+llm"
+ },
+ "drsheths:kesar-kojic-acid-oil-free-sunscreen-30g": {
+  "spf": null,
+  "pa": null,
+  "filter_type": null,
+  "finish": null,
+  "tinted": null,
+  "format": "oil",
+  "key_ingredients": [
+   "kesar",
+   "kojic acid",
+   "lime"
+  ],
+  "skin_types": [
+   "all",
+   "oily"
+  ],
+  "claims": [],
+  "fragrance_free": null,
+  "reef_safe": null,
+  "source": "rules+llm"
+ },
+ "drsheths:ceramide-vitamin-c-sunscreen-30g": {
+  "spf": 50,
+  "pa": "PA+++",
+  "filter_type": "hybrid",
+  "finish": null,
+  "tinted": null,
+  "format": null,
+  "key_ingredients": [
+   "allantoin",
+   "ceramide",
+   "ceramide np",
+   "glycerin",
+   "hyaluronic acid",
+   "octocrylene",
+   "salicylic acid",
+   "titanium dioxide",
+   "vitamin c",
+   "zinc oxide"
+  ],
+  "skin_types": [
+   "all",
+   "oily",
+   "sensitive"
+  ],
+  "claims": [
+   "blue light protection",
+   "brightening",
+   "hydrating",
+   "lightweight",
+   "no white cast",
+   "non toxic",
+   "non-greasy",
+   "paraben free",
+   "pregnancy safe",
+   "prevents micro-pigmentation",
+   "protects from blue light",
+   "restores skin barrier",
+   "soothing",
+   "sulphate free",
+   "vegan"
+  ],
+  "fragrance_free": null,
+  "reef_safe": null,
+  "source": "rules+llm"
+ },
+ "drsheths:mineral-fluid-sunscreen-50g": {
+  "spf": 50,
+  "pa": "PA++++",
+  "filter_type": "mineral",
+  "finish": null,
+  "tinted": null,
+  "format": "fluid",
+  "key_ingredients": [],
+  "skin_types": [],
+  "claims": [
+   "in-vivo tested",
+   "no white cast",
+   "pregnancy-safe formula",
+   "zero white cast"
+  ],
+  "fragrance_free": null,
+  "reef_safe": null,
+  "source": "rules+llm"
+ },
+ "drsheths:centella-niacinamide-oil-free-matte-sunscreen-50g": {
+  "spf": 50,
+  "pa": "PA++++",
+  "filter_type": null,
+  "finish": "matte",
+  "tinted": null,
+  "format": "oil",
+  "key_ingredients": [
+   "centella",
+   "niacinamide"
+  ],
+  "skin_types": [
+   "acne-prone",
+   "all",
+   "oily"
+  ],
+  "claims": [
+   "in-vivo tested",
+   "in-vivo tested spf 50+ pa++++",
+   "lightweight",
+   "matte finish",
+   "non pore-clogging",
+   "oil-free",
+   "water resistant",
+   "water-resistant"
+  ],
+  "fragrance_free": null,
+  "reef_safe": null,
+  "source": "rules+llm"
+ },
+ "drsheths:haldi-hyaluronic-acid-sunscreen-125g": {
+  "spf": 50,
+  "pa": "PA++++",
+  "filter_type": "hybrid",
+  "finish": null,
+  "tinted": false,
+  "format": null,
+  "key_ingredients": [
+   "allantoin",
+   "aloe vera",
+   "glycerin",
+   "hyaluronic acid",
+   "licorice",
+   "octocrylene",
+   "organic & mineral filters",
+   "rice",
+   "titanium dioxide",
+   "turmeric",
+   "turmeric extract",
+   "zinc oxide"
+  ],
+  "skin_types": [
+   "all",
+   "oily",
+   "sensitive"
+  ],
+  "claims": [
+   "blue light protection",
+   "brightening",
+   "brightens skin",
+   "dewy finish",
+   "doesn't leave a whitecast",
+   "hydrates & repairs a compromised skin barrier",
+   "hydrating",
+   "keeps skin extremely hydrated",
+   "lightweight",
+   "non toxic",
+   "non-greasy",
+   "paraben free",
+   "protects against uv a/b rays & blue light",
+   "sulphate free",
+   "vegan"
+  ],
+  "fragrance_free": null,
+  "reef_safe": null,
+  "source": "rules+llm"
+ },
+ "drsheths:oats-ceramide-sensitive-skin-sunscreen-50g": {
+  "spf": 50,
+  "pa": "PA++++",
+  "filter_type": null,
+  "finish": null,
+  "tinted": null,
+  "format": "oil",
+  "key_ingredients": [
+   "ceramide",
+   "oats"
+  ],
+  "skin_types": [
+   "sensitive"
+  ],
+  "claims": [
+   "oil-free",
+   "soothes skin",
+   "soothing",
+   "strengthens skin barrier"
+  ],
+  "fragrance_free": null,
+  "reef_safe": null,
+  "source": "rules+llm"
+ },
+ "drsheths:ceramide-vitamin-c-oil-free-sunscreen-50g": {
+  "spf": 50,
+  "pa": "PA++++",
+  "filter_type": "chemical",
+  "finish": null,
+  "tinted": null,
+  "format": "oil",
+  "key_ingredients": [
+   "ceramide",
+   "glycerin",
+   "hyaluronic acid",
+   "niacinamide",
+   "vitamin c"
+  ],
+  "skin_types": [
+   "all",
+   "all skin types",
+   "combination",
+   "oily"
+  ],
+  "claims": [
+   "alcohol-free",
+   "barrier repair",
+   "blue light protection",
+   "brightening",
+   "broad spectrum",
+   "cruelty-free",
+   "dewy finish",
+   "fragrance free",
+   "fragrance-free",
+   "hydrating",
+   "in-vivo tested",
+   "lightweight",
+   "no white cast",
+   "non-greasy",
+   "non-sticky",
+   "oil-free",
+   "paraben-free",
+   "protects from blue light",
+   "protects from infrared rays",
+   "soothing",
+   "sulphate-free",
+   "vegan",
+   "water resistant",
+   "water-resistant"
+  ],
+  "fragrance_free": true,
+  "reef_safe": null,
+  "source": "rules+llm"
+ },
+ "drsheths:kesar-kojic-acid-oil-free-sunscreen-50g": {
+  "spf": 50,
+  "pa": "PA++++",
+  "filter_type": null,
+  "finish": null,
+  "tinted": null,
+  "format": "oil",
+  "key_ingredients": [
+   "kesar",
+   "kojic acid"
+  ],
+  "skin_types": [
+   "acne-prone",
+   "all",
+   "oily"
+  ],
+  "claims": [
+   "brightening",
+   "in-vivo tested",
+   "uneven skin tone"
+  ],
+  "fragrance_free": null,
+  "reef_safe": null,
+  "source": "rules+llm"
+ },
+ "drsheths:kesar-kojic-acid-sunscreen-125g": {
+  "spf": 50,
+  "pa": "PA++++",
+  "filter_type": "hybrid",
+  "finish": "dewy",
+  "tinted": false,
+  "format": "gel-cream",
+  "key_ingredients": [
+   "allantoin",
+   "blueberry",
+   "glycerin",
+   "kesar extract",
+   "kojic acid",
+   "kojic acid complex",
+   "mineral & organic filters",
+   "niacinamide",
+   "octocrylene",
+   "saffron",
+   "titanium dioxide",
+   "zinc oxide"
+  ],
+  "skin_types": [
+   "all",
+   "all skin types",
+   "combination",
+   "oily",
+   "sensitive"
+  ],
+  "claims": [
+   "blue light protection",
+   "brightening",
+   "broad spectrum",
+   "dewy finish",
+   "hydrating",
+   "in-vivo tested",
+   "lightweight",
+   "no white cast",
+   "non toxic",
+   "non-greasy",
+   "non-greasy finish",
+   "paraben free",
+   "soothing",
+   "sulphate free",
+   "vegan"
+  ],
+  "fragrance_free": null,
+  "reef_safe": null,
+  "source": "rules+llm"
+ },
+ "drsheths:ashwagandha-alpha-arbutin-sunscreen-50g": {
+  "spf": 50,
+  "pa": "PA++++",
+  "filter_type": "hybrid",
+  "finish": "dewy",
+  "tinted": null,
+  "format": "gel-cream",
+  "key_ingredients": [
+   "allantoin",
+   "alpha arbutin",
+   "ashwagandha extract",
+   "glycerin",
+   "hyaluronic acid",
+   "mineral and organic filters",
+   "niacinamide",
+   "oat milk extract",
+   "octocrylene",
+   "panthenol",
+   "titanium dioxide",
+   "vitamin e",
+   "zinc oxide"
+  ],
+  "skin_types": [
+   "all",
+   "combination",
+   "oily",
+   "pigmented skin",
+   "sensitive"
+  ],
+  "claims": [
+   "anti-pigmentation",
+   "blue light protection",
+   "broad spectrum",
+   "broad-spectrum protection",
+   "dark spots reduction",
+   "dewy finish",
+   "fades hyperpigmentation",
+   "hydrating",
+   "lightweight",
+   "no white cast",
+   "non toxic",
+   "non-greasy",
+   "non-sticky finish",
+   "paraben free",
+   "pregnancy safe",
+   "prevents tanning",
+   "soothing",
+   "sulphate free",
+   "uv protection",
+   "vegan"
+  ],
+  "fragrance_free": null,
+  "reef_safe": null,
+  "source": "rules+llm"
+ },
+ "drsheths:ceramide-vitamin-c-sunscreen-125g": {
+  "spf": 50,
+  "pa": "PA++++",
+  "filter_type": "hybrid",
+  "finish": null,
+  "tinted": false,
+  "format": null,
+  "key_ingredients": [
+   "allantoin",
+   "aloe vera",
+   "ceramide",
+   "ceramide complex",
+   "glycerin",
+   "hyaluronic acid",
+   "kakadu plum",
+   "mineral and organic filters",
+   "octocrylene",
+   "titanium dioxide",
+   "vitamin c",
+   "vitamin c complex",
+   "zinc oxide"
+  ],
+  "skin_types": [
+   "all",
+   "sensitive"
+  ],
+  "claims": [
+   "blue light protection",
+   "brightening",
+   "broad-spectrum protection",
+   "hydrating",
+   "in-vivo tested",
+   "leaves no white cast",
+   "lightweight",
+   "no white cast",
+   "non toxic",
+   "non-greasy",
+   "not pregnancy safe",
+   "paraben free",
+   "pregnancy safe",
+   "prevents micro-pigmentation",
+   "protects against pollution",
+   "protects from damaging blue light",
+   "protects, moisturizes & brightens skin",
+   "restores the barrier",
+   "sulphate free",
+   "vegan"
+  ],
+  "fragrance_free": null,
+  "reef_safe": null,
+  "source": "rules+llm"
+ },
+ "drsheths:kesar-kojic-acid-sunscreen-80g": {
+  "spf": 50,
+  "pa": "PA++++",
+  "filter_type": "hybrid",
+  "finish": "dewy",
+  "tinted": false,
+  "format": "gel-cream",
+  "key_ingredients": [
+   "allantoin",
+   "blueberry",
+   "glycerin",
+   "kesar extract",
+   "kojic acid",
+   "mineral and organic filters",
+   "niacinamide",
+   "octocrylene",
+   "saffron",
+   "titanium dioxide",
+   "zinc oxide"
+  ],
+  "skin_types": [
+   "all",
+   "combination",
+   "oily",
+   "sensitive"
+  ],
+  "claims": [
+   "blue light protection",
+   "brightening",
+   "broad spectrum",
+   "dewy finish",
+   "hydrating",
+   "in-vivo tested",
+   "lightweight",
+   "no white cast",
+   "non toxic",
+   "non-greasy",
+   "non-greasy finish",
+   "not pregnancy safe",
+   "paraben free",
+   "pregnancy safe",
+   "soothing",
+   "sulphate free",
+   "vegan"
+  ],
+  "fragrance_free": null,
+  "reef_safe": null,
+  "source": "rules+llm"
+ },
+ "drsheths:haldi-hyaluronic-acid-sunscreen-spray-spf-50-pa": {
+  "spf": 50,
+  "pa": "PA++++",
+  "filter_type": "hybrid",
+  "finish": null,
+  "tinted": false,
+  "format": "spray",
+  "key_ingredients": [
+   "blueberry",
+   "glycerin",
+   "haldi extract",
+   "hyaluronic acid",
+   "mineral & organic filters",
+   "octocrylene",
+   "panthenol",
+   "titanium dioxide",
+   "turmeric",
+   "vitamin b5",
+   "vitamin c",
+   "vitamin e",
+   "zinc oxide"
+  ],
+  "skin_types": [
+   "all",
+   "dry"
+  ],
+  "claims": [
+   "24 hours long lasting hydration",
+   "blue light & ir protection",
+   "blue light protection",
+   "brightening",
+   "broad spectrum",
+   "broad-spectrum protection",
+   "dewy finish",
+   "easy to apply",
+   "hydrating",
+   "invisible finish",
+   "lightweight",
+   "mess-free",
+   "no white cast",
+   "non-greasy",
+   "non-sticky",
+   "paraben free",
+   "pregnancy safe",
+   "protects your skin from sunburn, tanning & pigmentation",
+   "quick-drying texture",
+   "sulphate free",
+   "vegan",
+   "water resistant"
+  ],
+  "fragrance_free": null,
+  "reef_safe": null,
+  "source": "rules+llm"
+ },
+ "drsheths:ceramide-vitamin-c-long-lasting-sunscreen-50-g": {
+  "spf": 50,
+  "pa": "PA++++",
+  "filter_type": "hybrid",
+  "finish": null,
+  "tinted": false,
+  "format": "oil",
+  "key_ingredients": [
+   "ceramide",
+   "ceramide complex",
+   "hyaluronic acid",
+   "titanium dioxide",
+   "vitamin c",
+   "vitamin e",
+   "zinc oxide"
+  ],
+  "skin_types": [
+   "all"
+  ],
+  "claims": [
+   "brightening",
+   "broad spectrum",
+   "broad-spectrum sun protection",
+   "builds skin barrier",
+   "hydrating",
+   "long-lasting formula",
+   "no white cast",
+   "non toxic",
+   "non-greasy",
+   "oil-free",
+   "paraben free",
+   "reduces dark spots",
+   "sulphate free",
+   "vegan",
+   "water & sweat-resistant",
+   "water resistant"
+  ],
+  "fragrance_free": null,
+  "reef_safe": null,
+  "source": "rules+llm"
+ },
+ "drsheths:kesar-kojic-acid-sunscreen-50g": {
+  "spf": 50,
+  "pa": "PA++++",
+  "filter_type": "hybrid",
+  "finish": "dewy",
+  "tinted": null,
+  "format": "gel-cream",
+  "key_ingredients": [
+   "allantoin",
+   "blueberry",
+   "glycerin",
+   "kesar extract",
+   "kojic acid",
+   "niacinamide",
+   "octocrylene",
+   "saffron",
+   "titanium dioxide",
+   "zinc oxide"
+  ],
+  "skin_types": [
+   "all",
+   "combination",
+   "oily",
+   "sensitive"
+  ],
+  "claims": [
+   "blue light protection",
+   "brightening",
+   "broad spectrum",
+   "dewy finish",
+   "hydrating",
+   "in-vivo tested",
+   "lightweight",
+   "no white cast",
+   "non toxic",
+   "non-greasy",
+   "paraben free",
+   "pregnancy safe",
+   "soothing",
+   "sulphate free",
+   "vegan"
+  ],
+  "fragrance_free": null,
+  "reef_safe": null,
+  "source": "rules+llm"
+ },
+ "drsheths:ceramide-vitamin-c-sunscreen-50g": {
+  "spf": 50,
+  "pa": "PA++++",
+  "filter_type": null,
+  "finish": null,
+  "tinted": null,
+  "format": null,
+  "key_ingredients": [
+   "ceramide",
+   "vitamin c"
+  ],
+  "skin_types": [
+   "all"
+  ],
+  "claims": [
+   "brightening",
+   "hydrating",
+   "in-vivo tested",
+   "leaves no white cast",
+   "lightweight",
+   "no white cast",
+   "protects, moisturizes & brightens skin"
+  ],
+  "fragrance_free": null,
+  "reef_safe": null,
+  "source": "rules+llm"
+ },
+ "drsheths:haldi-hyaluronic-acid-sunscreen-80g-spf-50-pa": {
+  "spf": 50,
+  "pa": "PA+++",
+  "filter_type": "hybrid",
+  "finish": null,
+  "tinted": null,
+  "format": null,
+  "key_ingredients": [
+   "allantoin",
+   "hyaluronic acid",
+   "licorice",
+   "mineral & organic filters",
+   "rice",
+   "titanium dioxide",
+   "turmeric",
+   "turmeric extract",
+   "zinc oxide"
+  ],
+  "skin_types": [
+   "all",
+   "dry",
+   "oily",
+   "sensitive"
+  ],
+  "claims": [
+   "anti-inflammatory",
+   "blue light protection",
+   "brightening",
+   "dewy finish",
+   "doesn't leave a white cast",
+   "hydrates",
+   "hydrating",
+   "lightweight",
+   "locks in deep hydration",
+   "non toxic",
+   "non-greasy",
+   "paraben free",
+   "prevents premature aging",
+   "prevents sunburn",
+   "protects against uv a/b rays & blue light",
+   "repair & plumping",
+   "repairs skin barrier",
+   "sulphate free",
+   "vegan"
+  ],
+  "fragrance_free": null,
+  "reef_safe": null,
+  "source": "rules+llm"
+ },
+ "drsheths:mineral-sunscreen-50g": {
+  "spf": 50,
+  "pa": "PA+++",
+  "filter_type": "mineral",
+  "finish": "matte",
+  "tinted": false,
+  "format": "lotion",
+  "key_ingredients": [
+   "glycerin",
+   "zinc oxide"
+  ],
+  "skin_types": [
+   "all",
+   "dry",
+   "oily",
+   "sensitive"
+  ],
+  "claims": [
+   "brightening",
+   "broad spectrum",
+   "broad-spectrum sun protection",
+   "fast absorbing",
+   "hydrating",
+   "lightweight",
+   "matte finish",
+   "no white cast",
+   "non toxic",
+   "non-greasy",
+   "oil-free",
+   "paraben free",
+   "pregnancy & sensitive skin safe",
+   "pregnancy safe",
+   "sulphate free",
+   "vegan",
+   "water & sweat resistant",
+   "water resistant",
+   "waterproof",
+   "zero white cast"
+  ],
+  "fragrance_free": null,
+  "reef_safe": null,
+  "source": "rules+llm"
+ },
+ "drsheths:ceramide-vitamin-c-sunscreen-80g": {
+  "spf": 50,
+  "pa": "PA++++",
+  "filter_type": "hybrid",
+  "finish": null,
+  "tinted": null,
+  "format": null,
+  "key_ingredients": [
+   "allantoin",
+   "ceramide",
+   "ceramide complex",
+   "glycerin",
+   "hyaluronic acid",
+   "mineral and organic filters",
+   "octocrylene",
+   "titanium dioxide",
+   "vitamin c",
+   "vitamin c complex",
+   "zinc oxide"
+  ],
+  "skin_types": [
+   "all",
+   "sensitive"
+  ],
+  "claims": [
+   "blue light protection",
+   "brightening",
+   "hydrating",
+   "in-vivo tested",
+   "leaves no white cast",
+   "lightweight",
+   "matte finish",
+   "no white cast",
+   "non toxic",
+   "non-greasy",
+   "paraben free",
+   "pregnancy safe",
+   "prevents micro-pigmentation",
+   "protects from uv rays and blue light",
+   "protects, moisturizes & brightens skin",
+   "strengthens the skin barrier",
+   "sulphate free",
+   "vegan"
+  ],
+  "fragrance_free": null,
+  "reef_safe": null,
+  "source": "rules+llm"
+ },
+ "drsheths:centella-niacinamide-oil-acne-control-sunscreen-spf-50-pa": {
+  "spf": 50,
+  "pa": "PA+++",
+  "filter_type": "hybrid",
+  "finish": "matte",
+  "tinted": null,
+  "format": "gel",
+  "key_ingredients": [
+   "centella",
+   "centella asiatica extract",
+   "cica",
+   "niacinamide",
+   "titanium dioxide",
+   "zinc oxide"
+  ],
+  "skin_types": [
+   "acne-prone",
+   "all",
+   "dry",
+   "oily"
+  ],
+  "claims": [
+   "blue light protection",
+   "brightening",
+   "broad spectrum",
+   "builds the skin's barrier",
+   "calms irritation and redness",
+   "fades uneven skin tone",
+   "hydrating",
+   "makeup friendly",
+   "matte finish",
+   "no white cast",
+   "non toxic",
+   "oil control",
+   "paraben free",
+   "pregnancy safe",
+   "prevents ageing",
+   "prevents breakouts",
+   "prevents sun damage",
+   "regulates sebum levels",
+   "soothes inflamed skin",
+   "soothing",
+   "sulphate free",
+   "ultra-matte texture",
+   "vegan",
+   "velvety dry finish",
+   "water resistant",
+   "water-resistant"
+  ],
+  "fragrance_free": null,
+  "reef_safe": null,
+  "source": "rules+llm"
+ },
+ "drsheths:haldi-hyaluronic-acid-sunscreen-50-g": {
+  "spf": 50,
+  "pa": "PA+++",
+  "filter_type": "hybrid",
+  "finish": null,
+  "tinted": null,
+  "format": null,
+  "key_ingredients": [
+   "allantoin",
+   "hyaluronic acid",
+   "licorice",
+   "mineral & organic filters",
+   "rice",
+   "titanium dioxide",
+   "turmeric",
+   "turmeric extract",
+   "zinc oxide"
+  ],
+  "skin_types": [
+   "all",
+   "dry",
+   "oily",
+   "sensitive"
+  ],
+  "claims": [
+   "blue light protection",
+   "brightening",
+   "dewy finish",
+   "hydrates & repairs a compromised skin barrier",
+   "hydrating",
+   "lightweight",
+   "lightweight, non-greasy texture",
+   "no white cast",
+   "non toxic",
+   "non-greasy",
+   "paraben free",
+   "pregnancy safe",
+   "protects against uv a/b rays & blue light",
+   "sulphate free",
+   "vegan"
+  ],
+  "fragrance_free": null,
+  "reef_safe": null,
+  "source": "rules+llm"
+ },
+ "fixderma:roll-on-sunscreen-for-face": {
+  "spf": 50,
+  "pa": null,
+  "filter_type": null,
+  "finish": null,
+  "tinted": null,
+  "format": "roll on",
+  "key_ingredients": [],
+  "skin_types": [],
+  "claims": [],
+  "fragrance_free": null,
+  "reef_safe": null,
+  "source": "rules+llm"
+ }
+}

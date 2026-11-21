@@ -49,6 +49,33 @@ def judgeme(brand: str, handle: str, pid: str, limit: int) -> tuple[list[dict], 
     url = "https://judge.me/reviews/reviews_for_widget"
     out: dict[str, dict] = {}
     agg: dict = {}
+    # 1) every low-rated review first (≤3★) — recency sampling alone misses complaints on highly rated products
+    for page in range(1, 6):
+        r = http.get(url, params={"url": shop, "shop_domain": shop, "platform": "shopify", "product_id": pid,
+                                  "page": page, "per_page": 30, "sort_by": "rating", "sort_dir": "asc"}, min_gap=1.2)
+        if r.status_code != 200:
+            break
+        d = r.json()
+        if "reviews" in d:
+            batch = [(x.get("uuid") or x.get("id"), x.get("rating"), x.get("title"), _clean(x.get("body_html") or x.get("body")),
+                      x.get("reviewer_name"), x.get("created_at"), x.get("verified_buyer")) for x in d["reviews"]]
+            if d.get("histogram"):
+                agg["histogram"] = {h["rating"]: h["frequency"] for h in d["histogram"]}
+        else:
+            batch = []
+            for el in BeautifulSoup(d.get("html") or "", "html.parser").select("div.jdgm-rev"):
+                sc = el.select_one(".jdgm-rev__rating")
+                tm = el.select_one("time.jdgm-rev__timestamp") or el.select_one(".jdgm-rev__timestamp")
+                gt = lambda sel: (el.select_one(sel) or BeautifulSoup("", "html.parser")).get_text(" ", strip=True)
+                batch.append((el.get("data-review-id"), sc.get("data-score") if sc else None, gt(".jdgm-rev__title"),
+                              gt(".jdgm-rev__body"), gt(".jdgm-rev__author"),
+                              (tm.get("datetime") or tm.get("data-content")) if tm else None, el.get("data-verified-buyer") == "true"))
+        low = [b for b in batch if b[1] is not None and float(b[1]) <= 3]
+        for b in low:
+            rec = _rec(brand, handle, pid, *b)
+            out[rec["review_id"]] = rec
+        if len(low) < len(batch) or not batch:
+            break
     for sort_dir in ("desc", "asc"):
         page = 1
         while len(out) < limit:

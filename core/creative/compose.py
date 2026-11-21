@@ -14,12 +14,37 @@ from . import shaping
 from .brandkit import CANVAS, INK, cutout, fetch_image
 
 SIZES = {"square": (1080, 1080), "story": (1080, 1920), "aplus": (970, 600)}
+SIZE_LABELS = {"square": "Feed 1:1 · 1080×1080", "story": "Story / Reel 9:16 · 1080×1920", "aplus": "Amazon A+ · 970×600"}
+
+# Ad styles the user picks from (tiles). Each changes the AI background scene and the type treatment;
+# the real packshot and the copy stay the same.
+STYLES = {
+    "juicy": {"name": "Fresh & juicy", "blurb": "Fruit-active splash, bright and playful — the classic Dot & Key feel.",
+              "scene": "{fruit} slices and water droplets splashing on wet pale stone, bright morning light, fresh and juicy",
+              "panel": (250, 249, 246, 226), "ink": (30, 32, 34), "sub": (70, 74, 80), "accent": None},
+    "clinical": {"name": "Clean clinical", "blurb": "Calm apothecary studio, lots of white space — lets the science speak.",
+                 "scene": "minimal pale ceramic studio backdrop, soft diffused light, subtle shadow, clean apothecary mood",
+                 "panel": (255, 255, 255, 0), "ink": (30, 32, 34), "sub": (100, 104, 110), "accent": "#22BCE0"},
+    "lifestyle": {"name": "Sunlit everyday", "blurb": "Real Indian day-in-the-life light: balcony, commute, harsh sun.",
+                  "scene": "sunlit Indian apartment balcony with potted plants at golden hour, warm harsh sunlight, no people",
+                  "panel": (24, 24, 26, 170), "ink": (255, 255, 255), "sub": (235, 235, 235), "accent": "#FF803A"},
+}
+
+
+def style_scene(style: str, fruit: str) -> str:
+    return STYLES.get(style, STYLES["juicy"])["scene"].format(fruit=fruit or "fresh fruit")
 SCRIPT_FONTS = {"hi": "NotoSansDevanagari.ttf", "mr": "NotoSansDevanagari.ttf", "bn": "NotoSansBengali.ttf",
                 "ta": "NotoSansTamil.ttf"}
 
 
 def hex_rgb(h):
     return images.hex_rgb(h)
+
+
+def readable(rgb, max_lum: float = 0.6, fallback=(244, 87, 108)):
+    """Accent for a white-text button: too light → Dot & Key watermelon pink instead of a muddy darkened tint."""
+    r, g, b = rgb
+    return (r, g, b) if (0.2126 * r + 0.7152 * g + 0.0722 * b) / 255 <= max_lum else fallback
 
 
 @dataclass(frozen=True)
@@ -111,15 +136,17 @@ def product_layer(product: dict, max_w: int, max_h: int) -> Image.Image | None:
 
 def render_ad(product: dict, variant: dict, size: str, palette: list[str], out: Path, lang: str = "en",
               seed: int = 7, scene_img: Image.Image | None = None, engine_pref: list[str] | None = None,
-              allow_paid: bool = False) -> dict:
+              allow_paid: bool = False, style: str | None = None, fruit: str = "") -> dict:
     W, H = SIZES[size]
+    st_ = STYLES.get(style or "juicy", STYLES["juicy"])
+    prompt = style_scene(style, fruit) if style else variant["scene_prompt"]
     if scene_img is None:
-        bg, engine = images.scene(variant["scene_prompt"], W, H, palette, seed=seed, prefer=engine_pref, allow_paid=allow_paid)
+        bg, engine = images.scene(prompt, W, H, palette, seed=seed, prefer=engine_pref, allow_paid=allow_paid)
     else:
         bg, engine = scene_img.resize((W, H)), "provided"
     canvas = bg.convert("RGBA")
-    accent = hex_rgb(palette[0])
-    ink = hex_rgb(INK)
+    accent = readable(hex_rgb(st_["accent"] or palette[0]))
+    ink = st_["ink"]
     pad = int(W * 0.065)
     if size == "aplus":
         x0, y0, x1, ymax = pad, pad, int(W * 0.52), H - pad
@@ -154,8 +181,12 @@ def render_ad(product: dict, variant: dict, size: str, palette: list[str], out: 
 
     # ---- panel hugging the content ----
     panel = Image.new("RGBA", canvas.size, (0, 0, 0, 0))
-    ImageDraw.Draw(panel).rounded_rectangle((x0 - pad // 2, y0 - pad // 2, x1 + pad // 3, bottom + pad // 2),
-                                            radius=int(W * 0.025), fill=hex_rgb(CANVAS) + (226,))
+    if style == "clinical":  # white type block, thin rule instead of a card
+        ImageDraw.Draw(panel).rectangle((x0 - pad // 2, y0 - pad // 2, x1 + pad // 3, bottom + pad // 2), fill=(255, 255, 255, 205))
+        ImageDraw.Draw(panel).line((x0, bottom + pad // 3, x1, bottom + pad // 3), fill=(230, 228, 223, 255), width=2)
+    else:
+        ImageDraw.Draw(panel).rounded_rectangle((x0 - pad // 2, y0 - pad // 2, x1 + pad // 3, bottom + pad // 2),
+                                                radius=int(W * 0.025), fill=st_["panel"])
     canvas = Image.alpha_composite(canvas, panel)
 
     # ---- real packshot with grounded shadow ----
@@ -179,14 +210,14 @@ def render_ad(product: dict, variant: dict, size: str, palette: list[str], out: 
         yy += int(hs * hlh)
     yy = sub_y
     for line in sl:
-        draw_text(canvas, (x0, yy), line, sf, (70, 74, 80))
+        draw_text(canvas, (x0, yy), line, sf, st_["sub"])
         yy += int(ss * slh)
     d = ImageDraw.Draw(canvas)
     d.rounded_rectangle((x0, cy, x0 + ctw + cf.size * 2, cy + ch), radius=ch // 2, fill=accent)
     draw_text(canvas, (int(x0 + cf.size + ctw / 2), cy + ch // 2), variant["cta"], cf, (255, 255, 255), anchor="mm")
     out.parent.mkdir(parents=True, exist_ok=True)
     canvas.convert("RGB").save(out, quality=92)
-    return {"path": str(out), "engine": engine, "size": size, "lang": lang}
+    return {"path": str(out), "engine": engine, "size": size, "lang": lang, "style": style or "juicy", "label": SIZE_LABELS[size]}
 
 
 def render_frame(product: dict, frame: dict, palette: list[str], W: int, H: int, out: Path, idx: int, n: int,

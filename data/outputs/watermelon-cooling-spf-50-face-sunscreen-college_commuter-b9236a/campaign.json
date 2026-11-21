@@ -1,0 +1,1252 @@
+{
+ "id": "watermelon-cooling-spf-50-face-sunscreen-college_commuter-b9236a",
+ "category": "sunscreen",
+ "created_at": "2026-11-21 15:02",
+ "elapsed_s": 846.1,
+ "product": {
+  "brand": "dotandkey",
+  "handle": "watermelon-cooling-spf-50-face-sunscreen",
+  "title": "Watermelon Sunscreen SPF 50+ PA++++ With New-Age UV Filters For Oily Skin",
+  "price": 387.0,
+  "image": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/80ml.jpg?v=1793277172",
+  "url": "https://www.dotandkey.com/products/watermelon-cooling-spf-50-face-sunscreen",
+  "spec": {
+   "spf": 50,
+   "pa": "PA++++",
+   "filter_type": null,
+   "finish": null,
+   "tinted": null,
+   "format": null,
+   "key_ingredients": [
+    "watermelon"
+   ],
+   "skin_types": [
+    "oily"
+   ],
+   "claims": [],
+   "fragrance_free": null,
+   "reef_safe": null,
+   "source": "rules+llm"
+  },
+  "size": null,
+  "unit": null
+ },
+ "persona": {
+  "id": "college_commuter",
+  "name": "Ananya, 21 — college commuter",
+  "detail": "Delhi/Kolkata, rides metro + auto daily, oily-combination skin, hates white cast in selfies, budget ₹400–600."
+ },
+ "brief": {
+  "insight": "Oily-skinned commuters constantly battle sunscreens that feel greasy or leave a heavy white cast, making daily sun protection a chore.",
+  "key_message": "Get reliable sun protection that feels weightless and non-sticky, keeping your skin protected without the grease.",
+  "proof_points": [
+   {
+    "text": "Enjoy a light, non-oily finish that absorbs effortlessly without feeling sticky.",
+    "evidence": [
+     "m:net:dotandkey:texture|watermelon-cooling-spf-50-face-sunscreen",
+     "r:dotandkey:0ca49bc1-d543-4921-86db-474b939fbd86",
+     "r:dotandkey:94188a46-dc7e-4294-835f-52578244d110"
+    ]
+   },
+   {
+    "text": "Experience powerful tan and sun protection with an SPF 50 PA++++ formula that leaves no white cast.",
+    "evidence": [
+     "m:net:dotandkey:tan_protection|watermelon-cooling-spf-50-face-sunscreen",
+     "m:net:dotandkey:white_cast|watermelon-cooling-spf-50-face-sunscreen",
+     "r:dotandkey:56333e72-1bed-4d29-9491-365eb20e97f6"
+    ]
+   },
+   {
+    "text": "Layer it seamlessly under makeup with zero pilling and no eye irritation.",
+    "evidence": [
+     "m:net:dotandkey:makeup_pilling|watermelon-cooling-spf-50-face-sunscreen",
+     "m:net:dotandkey:eye_sting|watermelon-cooling-spf-50-face-sunscreen",
+     "r:dotandkey:3b4f4768-02ff-49da-b323-f0153db4f8a0",
+     "r:dotandkey:11f6c2a2-5f3f-4ea8-9a1e-3a3b33db4bc8"
+    ]
+   }
+  ],
+  "persona": "Ananya, 21 — college commuter — Delhi/Kolkata, rides metro + auto daily, oily-combination skin, hates white cast in selfies, budget ₹400–600.",
+  "tone": "Juicy, upbeat, skin-smart. Fruit-forward and playful but backed by actives. Short sentences. Talk like a friend who knows skincare.",
+  "avoid": [
+   "cure",
+   "cures",
+   "guaranteed",
+   "100% safe",
+   "miracle",
+   "permanent",
+   "whitening",
+   "fairness",
+   "fair skin",
+   "best in india",
+   "no.1",
+   "number one",
+   "chemical-free"
+  ]
+ },
+ "ads": {
+  "variants": [
+   {
+    "headline": "Oily skin, meet your match.",
+    "subline": "Enjoy a light, non-oily finish that absorbs effortlessly without feeling sticky.",
+    "cta": "Grab yours",
+    "scene_prompt": "Fresh sliced watermelon on a sunlit Delhi balcony with dewy morning condensation.",
+    "why": "Answers the oily skin commuter's constant battle against heavy, greasy sunscreens.",
+    "evidence": [
+     "m:net:dotandkey:texture|watermelon-cooling-spf-50-face-sunscreen",
+     "r:dotandkey:0ca49bc1-d543-4921-86db-474b939fbd86",
+     "r:dotandkey:94188a46-dc7e-4294-835f-52578244d110"
+    ],
+    "claims": {
+     "verdict": "ok",
+     "reasons": [],
+     "topics": [
+      "greasy_sticky",
+      "texture"
+     ],
+     "evidence": [
+      "r:dotandkey:c92335ec-c5ea-4b9a-b36d-e536d2c0917c",
+      "r:dotandkey:d51b53ac-16d9-4111-a944-58c651f684e7",
+      "r:dotandkey:6507e10b-251c-4e31-995a-5adb5ebb7606",
+      "r:dotandkey:c92335ec-c5ea-4b9a-b36d-e536d2c0917c",
+      "r:dotandkey:17df123f-dc67-4c24-864e-272f7e2bc367",
+      "r:dotandkey:32bc3ab0-360b-4fd7-a18a-ed8421c4874d"
+     ]
+    }
+   },
+   {
+    "headline": "Say goodbye to greasy sunscreens.",
+    "subline": "Experience powerful tan and sun protection with an SPF 50 PA++++ formula that leaves no white cast.",
+    "cta": "Add to cart",
+    "scene_prompt": "Juicy watermelon wedges resting on a cool grey stone slab outdoors in bright daylight.",
+    "why": "Solves the frustration of white casts ruining selfies during daily commutes.",
+    "evidence": [
+     "m:net:dotandkey:tan_protection|watermelon-cooling-spf-50-face-sunscreen",
+     "m:net:dotandkey:white_cast|watermelon-cooling-spf-50-face-sunscreen",
+     "r:dotandkey:56333e72-1bed-4d29-9491-365eb20e97f6"
+    ],
+    "claims": {
+     "verdict": "ok",
+     "reasons": [],
+     "topics": [
+      "white_cast",
+      "greasy_sticky",
+      "tan_protection"
+     ],
+     "evidence": [
+      "r:dotandkey:6507e10b-251c-4e31-995a-5adb5ebb7606",
+      "r:dotandkey:54847ceb-8885-436d-abe2-478740a392f6",
+      "r:dotandkey:73d86e1d-c7ce-4d55-b946-7de823a08131",
+      "r:dotandkey:c92335ec-c5ea-4b9a-b36d-e536d2c0917c",
+      "r:dotandkey:d51b53ac-16d9-4111-a944-58c651f684e7",
+      "r:dotandkey:6507e10b-251c-4e31-995a-5adb5ebb7606",
+      "r:dotandkey:56333e72-1bed-4d29-9491-365eb20e97f6",
+      "r:dotandkey:ef4eb749-150f-4cb0-9a65-174f2e54e7d7",
+      "r:dotandkey:a87630cf-e82a-43d0-962e-27ae660368f7"
+     ]
+    }
+   },
+   {
+    "headline": "Layers really well under makeup!",
+    "subline": "Layer it seamlessly under makeup with zero pilling and no eye irritation.",
+    "cta": "Shop now",
+    "scene_prompt": "Fresh juicy watermelon slices near a sun-drenched college campus window with soft morning light.",
+    "why": "Uses real customer praise to highlight smooth makeup layering without stinging eyes.",
+    "evidence": [
+     "m:net:dotandkey:makeup_pilling|watermelon-cooling-spf-50-face-sunscreen",
+     "m:net:dotandkey:eye_sting|watermelon-cooling-spf-50-face-sunscreen",
+     "r:dotandkey:3b4f4768-02ff-49da-b323-f0153db4f8a0",
+     "r:dotandkey:11f6c2a2-5f3f-4ea8-9a1e-3a3b33db4bc8"
+    ],
+    "claims": {
+     "verdict": "ok",
+     "reasons": [],
+     "topics": [
+      "breakouts",
+      "eye_sting",
+      "makeup_pilling"
+     ],
+     "evidence": [
+      "r:dotandkey:2a1bbd68-efbf-4ed2-bcdc-98808171f2f1",
+      "r:dotandkey:20cc8841-d99f-44ed-b495-27ccc15baa6f",
+      "r:dotandkey:b020e747-7067-4edf-b740-b0643524c596",
+      "r:dotandkey:e2d8ae37-247a-47cf-96b7-821c39dad492",
+      "r:dotandkey:71b78de4-6d01-498e-87fb-a40a28869379",
+      "r:dotandkey:11f6c2a2-5f3f-4ea8-9a1e-3a3b33db4bc8",
+      "r:dotandkey:1328d690-7a64-42e1-a93c-cf2d49f1e5bb",
+      "r:dotandkey:ad4a6ae9-83aa-4e91-9c5d-06ded9074424",
+      "r:dotandkey:3b4f4768-02ff-49da-b323-f0153db4f8a0"
+     ]
+    }
+   }
+  ],
+  "assets": [
+   {
+    "path": "/Users/anshuman.sarda/Desktop/CodeYard_dotnkey/data/outputs/watermelon-cooling-spf-50-face-sunscreen-college_commuter-b9236a/ad_c1_juicy_square_en.jpg",
+    "engine": "cloudflare",
+    "size": "square",
+    "lang": "en",
+    "style": "juicy",
+    "label": "Feed 1:1 · 1080×1080",
+    "variant": 0
+   },
+   {
+    "path": "/Users/anshuman.sarda/Desktop/CodeYard_dotnkey/data/outputs/watermelon-cooling-spf-50-face-sunscreen-college_commuter-b9236a/ad_c1_juicy_story_en.jpg",
+    "engine": "cloudflare",
+    "size": "story",
+    "lang": "en",
+    "style": "juicy",
+    "label": "Story / Reel 9:16 · 1080×1920",
+    "variant": 0
+   },
+   {
+    "path": "/Users/anshuman.sarda/Desktop/CodeYard_dotnkey/data/outputs/watermelon-cooling-spf-50-face-sunscreen-college_commuter-b9236a/ad_c1_juicy_aplus_en.jpg",
+    "engine": "cloudflare",
+    "size": "aplus",
+    "lang": "en",
+    "style": "juicy",
+    "label": "Amazon A+ · 970×600",
+    "variant": 0
+   }
+  ]
+ },
+ "claims_probe": [
+  {
+   "text": "Zero white cast, guaranteed",
+   "verdict": "block",
+   "reasons": [
+    {
+     "level": "block",
+     "reason": "Medical/absolute claim ('guarantee') — not allowed under ASCI/CDSCO norms."
+    },
+    {
+     "level": "block",
+     "reason": "Banned brand word: 'guaranteed'."
+    }
+   ],
+   "topics": [
+    "white_cast"
+   ],
+   "evidence": [
+    "r:dotandkey:6507e10b-251c-4e31-995a-5adb5ebb7606",
+    "r:dotandkey:54847ceb-8885-436d-abe2-478740a392f6",
+    "r:dotandkey:73d86e1d-c7ce-4d55-b946-7de823a08131"
+   ]
+  },
+  {
+   "text": "Non-greasy, never sticky",
+   "verdict": "ok",
+   "reasons": [],
+   "topics": [
+    "greasy_sticky"
+   ],
+   "evidence": [
+    "r:dotandkey:c92335ec-c5ea-4b9a-b36d-e536d2c0917c",
+    "r:dotandkey:d51b53ac-16d9-4111-a944-58c651f684e7",
+    "r:dotandkey:6507e10b-251c-4e31-995a-5adb5ebb7606"
+   ]
+  },
+  {
+   "text": "No eye sting, ever",
+   "verdict": "ok",
+   "reasons": [],
+   "topics": [
+    "eye_sting"
+   ],
+   "evidence": [
+    "r:dotandkey:e2d8ae37-247a-47cf-96b7-821c39dad492",
+    "r:dotandkey:71b78de4-6d01-498e-87fb-a40a28869379",
+    "r:dotandkey:11f6c2a2-5f3f-4ea8-9a1e-3a3b33db4bc8"
+   ]
+  },
+  {
+   "text": "Won't break you out",
+   "verdict": "ok",
+   "reasons": [],
+   "topics": [],
+   "evidence": []
+  },
+  {
+   "text": "SPF 60 protection",
+   "verdict": "block",
+   "reasons": [
+    {
+     "level": "block",
+     "reason": "SPF 60 does not match the product (SPF 50)."
+    }
+   ],
+   "topics": [
+    "tan_protection"
+   ],
+   "evidence": [
+    "r:dotandkey:56333e72-1bed-4d29-9491-365eb20e97f6",
+    "r:dotandkey:ef4eb749-150f-4cb0-9a65-174f2e54e7d7",
+    "r:dotandkey:a87630cf-e82a-43d0-962e-27ae660368f7"
+   ]
+  },
+  {
+   "text": "Better than Minimalist",
+   "verdict": "block",
+   "reasons": [
+    {
+     "level": "block",
+     "reason": "Names a competitor ('Minimalist') — comparative ads need ASCI-grade substantiation."
+    }
+   ],
+   "topics": [],
+   "evidence": []
+  },
+  {
+   "text": "Cures tanning permanently",
+   "verdict": "block",
+   "reasons": [
+    {
+     "level": "block",
+     "reason": "Medical/absolute claim ('cures') — not allowed under ASCI/CDSCO norms."
+    },
+    {
+     "level": "block",
+     "reason": "Medical/absolute claim ('permanently') — not allowed under ASCI/CDSCO norms."
+    },
+    {
+     "level": "block",
+     "reason": "Banned brand word: 'cures'."
+    }
+   ],
+   "topics": [],
+   "evidence": []
+  },
+  {
+   "text": "Lightweight texture that absorbs fast",
+   "verdict": "ok",
+   "reasons": [],
+   "topics": [
+    "texture"
+   ],
+   "evidence": [
+    "r:dotandkey:c92335ec-c5ea-4b9a-b36d-e536d2c0917c",
+    "r:dotandkey:17df123f-dc67-4c24-864e-272f7e2bc367",
+    "r:dotandkey:32bc3ab0-360b-4fd7-a18a-ed8421c4874d"
+   ]
+  }
+ ],
+ "ecom": {
+  "product_description": "Meet your skin's new main character! Say goodbye to heavy, sticky creams that ruin your vibe. Our Watermelon Sunscreen SPF 50+ PA++++ is here to make daily sun defense super juicy and fun. Packed with fresh watermelon goodness, this ultra-light formula absorbs instantly with zero white cast and a non-oily finish that feels like nothing at all. Whether you are running to college or catching the metro, it layers like a dream under your makeup without any pilling or eye sting. Get reliable, skin-smart tan protection that stays fresh all day long, all for just ₹387. Your oily skin will thank you!",
+  "amazon_title": "Dot & Key Watermelon Sunscreen SPF 50+ PA++++ For Oily Skin | Lightweight, Non-Sticky & Zero White Cast UV Protection | 50g",
+  "bullets": [
+   "FEELS WEIGHTLESS: Enjoy a light, non-oily finish that absorbs effortlessly without feeling sticky.",
+   "TOTAL PROTECTION: Experience powerful tan and sun protection with an SPF 50 PA++++ formula that leaves no white cast.",
+   "MAKEUP FRIENDLY: Layer it seamlessly under makeup with zero pilling and no eye irritation.",
+   "REFRESHING TEXTURE: Infused with watermelon for a cooling sensation that feels refreshing on application.",
+   "BUDGET SMART: Get high-performance, skin-smart sun defense designed specifically for oily skin at just ₹387."
+  ],
+  "aplus": [
+   {
+    "title": "Juicy Sun Protection That Actually Fits Your Vibe",
+    "body": "Tired of sunscreens that feel like a heavy mask? Our watermelon-infused formula gives you serious SPF 50 PA++++ defense while feeling totally light and breezy on your skin.",
+    "image_idea": "Bright, aesthetic shot of the sunscreen tube next to fresh watermelon slices on a sunny pastel background.",
+    "evidence": [
+     "m:net:dotandkey:texture|watermelon-cooling-spf-50-face-sunscreen",
+     "m:net:dotandkey:tan_protection|watermelon-cooling-spf-50-face-sunscreen",
+     "r:dotandkey:0ca49bc1-d543-4921-86db-474b939fbd86"
+    ]
+   },
+   {
+    "title": "Zero White Cast, Zero Drama",
+    "body": "Say hello to seamless blending! This sunscreen vanishes into your skin within seconds, leaving no ghostly white cast behind—just pure, protected skin ready for your selfies.",
+    "image_idea": "Close-up of a model applying the translucent gel texture smoothly onto their face with a happy expression.",
+    "evidence": [
+     "m:net:dotandkey:white_cast|watermelon-cooling-spf-50-face-sunscreen",
+     "r:dotandkey:11ae4ece-9ed8-48e7-ad47-24d4808eae49"
+    ]
+   },
+   {
+    "title": "Bye-Bye Grease, Hello Non-Oily Finish",
+    "body": "Specially made for oily skin commuters. It controls stickiness and stays fresh all day, keeping your face looking matte, smooth, and perfectly balanced.",
+    "image_idea": "Flatlay of the sunscreen with oil-blotting papers and water splashes to highlight the non-greasy texture.",
+    "evidence": [
+     "m:net:dotandkey:greasy_sticky|watermelon-cooling-spf-50-face-sunscreen",
+     "m:net:dotandkey:finish|watermelon-cooling-spf-50-face-sunscreen",
+     "r:dotandkey:94188a46-dc7e-4294-835f-52578244d110"
+    ]
+   },
+   {
+    "title": "Layers Like a Dream Under Makeup",
+    "body": "No pilling, no fuss. The lightweight texture layers effortlessly under your favorite base makeup while keeping your eyes completely sting-free.",
+    "image_idea": "A makeup brush and compact powder placed neatly beside the sunscreen tube.",
+    "evidence": [
+     "m:net:dotandkey:makeup_pilling|watermelon-cooling-spf-50-face-sunscreen",
+     "m:net:dotandkey:eye_sting|watermelon-cooling-spf-50-face-sunscreen",
+     "r:dotandkey:3b4f4768-02ff-49da-b323-f0153db4f8a0"
+    ]
+   },
+   {
+    "title": "Your Daily Commute Companion",
+    "body": "Traversing the city has never been this safe. Reliable tan protection backed by skin-smart actives so you can step out every time with total confidence.",
+    "image_idea": "Lifestyle shot of a college student holding the sunscreen tube while carrying a trendy tote bag outdoors.",
+    "evidence": [
+     "m:net:dotandkey:tan_protection|watermelon-cooling-spf-50-face-sunscreen",
+     "r:dotandkey:56333e72-1bed-4d29-9491-365eb20e97f6"
+    ]
+   }
+  ],
+  "seo_keywords": [
+   "watermelon sunscreen",
+   "sunscreen for oily skin",
+   "spf 50 sunscreen",
+   "pa++++ sunscreen",
+   "lightweight sunscreen",
+   "non sticky sunscreen",
+   "no white cast sunscreen",
+   "sunscreen under ₹400",
+   "dot and key watermelon sunscreen",
+   "cooling sunscreen",
+   "gel sunscreen for face",
+   "sunscreen without pilling"
+  ],
+  "evidence": [
+   "m:net:dotandkey:texture|watermelon-cooling-spf-50-face-sunscreen",
+   "m:net:dotandkey:tan_protection|watermelon-cooling-spf-50-face-sunscreen",
+   "m:net:dotandkey:greasy_sticky|watermelon-cooling-spf-50-face-sunscreen",
+   "m:net:dotandkey:finish|watermelon-cooling-spf-50-face-sunscreen",
+   "m:net:dotandkey:white_cast|watermelon-cooling-spf-50-face-sunscreen",
+   "m:net:dotandkey:breakouts|watermelon-cooling-spf-50-face-sunscreen",
+   "m:net:dotandkey:makeup_pilling|watermelon-cooling-spf-50-face-sunscreen",
+   "m:net:dotandkey:fragrance|watermelon-cooling-spf-50-face-sunscreen",
+   "m:net:dotandkey:packaging|watermelon-cooling-spf-50-face-sunscreen",
+   "m:net:dotandkey:eye_sting|watermelon-cooling-spf-50-face-sunscreen",
+   "m:net:dotandkey:value|watermelon-cooling-spf-50-face-sunscreen",
+   "r:dotandkey:0ca49bc1-d543-4921-86db-474b939fbd86",
+   "r:dotandkey:11ae4ece-9ed8-48e7-ad47-24d4808eae49",
+   "r:dotandkey:94188a46-dc7e-4294-835f-52578244d110",
+   "r:dotandkey:56333e72-1bed-4d29-9491-365eb20e97f6",
+   "r:dotandkey:3b4f4768-02ff-49da-b323-f0153db4f8a0",
+   "r:dotandkey:11f6c2a2-5f3f-4ea8-9a1e-3a3b33db4bc8"
+  ]
+ },
+ "ecom_claims": [
+  {
+   "text": "Meet your skin's new main character! Say goodbye to heavy, sticky creams that ruin your vibe. Our Watermelon Sunscreen SPF 50+ PA++++ is here to make daily sun defense super juicy and fun. Packed with fresh watermelon goodness, this ultra-light formula absorbs instantly with zero white cast and a non-oily finish that feels like nothing at all. Whether you are running to college or catching the metro, it layers like a dream under your makeup without any pilling or eye sting. Get reliable, skin-smart tan protection that stays fresh all day long, all for just ₹387. Your oily skin will thank you!",
+   "verdict": "ok",
+   "reasons": [],
+   "topics": [
+    "white_cast",
+    "greasy_sticky",
+    "eye_sting",
+    "makeup_pilling",
+    "tan_protection",
+    "texture"
+   ],
+   "evidence": [
+    "r:dotandkey:6507e10b-251c-4e31-995a-5adb5ebb7606",
+    "r:dotandkey:54847ceb-8885-436d-abe2-478740a392f6",
+    "r:dotandkey:73d86e1d-c7ce-4d55-b946-7de823a08131",
+    "r:dotandkey:c92335ec-c5ea-4b9a-b36d-e536d2c0917c",
+    "r:dotandkey:d51b53ac-16d9-4111-a944-58c651f684e7",
+    "r:dotandkey:6507e10b-251c-4e31-995a-5adb5ebb7606",
+    "r:dotandkey:e2d8ae37-247a-47cf-96b7-821c39dad492",
+    "r:dotandkey:71b78de4-6d01-498e-87fb-a40a28869379",
+    "r:dotandkey:11f6c2a2-5f3f-4ea8-9a1e-3a3b33db4bc8",
+    "r:dotandkey:1328d690-7a64-42e1-a93c-cf2d49f1e5bb",
+    "r:dotandkey:ad4a6ae9-83aa-4e91-9c5d-06ded9074424",
+    "r:dotandkey:3b4f4768-02ff-49da-b323-f0153db4f8a0",
+    "r:dotandkey:56333e72-1bed-4d29-9491-365eb20e97f6",
+    "r:dotandkey:ef4eb749-150f-4cb0-9a65-174f2e54e7d7",
+    "r:dotandkey:a87630cf-e82a-43d0-962e-27ae660368f7",
+    "r:dotandkey:c92335ec-c5ea-4b9a-b36d-e536d2c0917c",
+    "r:dotandkey:17df123f-dc67-4c24-864e-272f7e2bc367",
+    "r:dotandkey:32bc3ab0-360b-4fd7-a18a-ed8421c4874d"
+   ]
+  },
+  {
+   "text": "Dot & Key Watermelon Sunscreen SPF 50+ PA++++ For Oily Skin | Lightweight, Non-Sticky & Zero White Cast UV Protection | 50g",
+   "verdict": "ok",
+   "reasons": [],
+   "topics": [
+    "white_cast",
+    "greasy_sticky",
+    "tan_protection",
+    "texture"
+   ],
+   "evidence": [
+    "r:dotandkey:6507e10b-251c-4e31-995a-5adb5ebb7606",
+    "r:dotandkey:54847ceb-8885-436d-abe2-478740a392f6",
+    "r:dotandkey:73d86e1d-c7ce-4d55-b946-7de823a08131",
+    "r:dotandkey:c92335ec-c5ea-4b9a-b36d-e536d2c0917c",
+    "r:dotandkey:d51b53ac-16d9-4111-a944-58c651f684e7",
+    "r:dotandkey:6507e10b-251c-4e31-995a-5adb5ebb7606",
+    "r:dotandkey:56333e72-1bed-4d29-9491-365eb20e97f6",
+    "r:dotandkey:ef4eb749-150f-4cb0-9a65-174f2e54e7d7",
+    "r:dotandkey:a87630cf-e82a-43d0-962e-27ae660368f7",
+    "r:dotandkey:c92335ec-c5ea-4b9a-b36d-e536d2c0917c",
+    "r:dotandkey:17df123f-dc67-4c24-864e-272f7e2bc367",
+    "r:dotandkey:32bc3ab0-360b-4fd7-a18a-ed8421c4874d"
+   ]
+  },
+  {
+   "text": "FEELS WEIGHTLESS: Enjoy a light, non-oily finish that absorbs effortlessly without feeling sticky.",
+   "verdict": "ok",
+   "reasons": [],
+   "topics": [
+    "greasy_sticky",
+    "texture"
+   ],
+   "evidence": [
+    "r:dotandkey:c92335ec-c5ea-4b9a-b36d-e536d2c0917c",
+    "r:dotandkey:d51b53ac-16d9-4111-a944-58c651f684e7",
+    "r:dotandkey:6507e10b-251c-4e31-995a-5adb5ebb7606",
+    "r:dotandkey:c92335ec-c5ea-4b9a-b36d-e536d2c0917c",
+    "r:dotandkey:17df123f-dc67-4c24-864e-272f7e2bc367",
+    "r:dotandkey:32bc3ab0-360b-4fd7-a18a-ed8421c4874d"
+   ]
+  },
+  {
+   "text": "TOTAL PROTECTION: Experience powerful tan and sun protection with an SPF 50 PA++++ formula that leaves no white cast.",
+   "verdict": "ok",
+   "reasons": [],
+   "topics": [
+    "white_cast",
+    "tan_protection"
+   ],
+   "evidence": [
+    "r:dotandkey:6507e10b-251c-4e31-995a-5adb5ebb7606",
+    "r:dotandkey:54847ceb-8885-436d-abe2-478740a392f6",
+    "r:dotandkey:73d86e1d-c7ce-4d55-b946-7de823a08131",
+    "r:dotandkey:56333e72-1bed-4d29-9491-365eb20e97f6",
+    "r:dotandkey:ef4eb749-150f-4cb0-9a65-174f2e54e7d7",
+    "r:dotandkey:a87630cf-e82a-43d0-962e-27ae660368f7"
+   ]
+  },
+  {
+   "text": "MAKEUP FRIENDLY: Layer it seamlessly under makeup with zero pilling and no eye irritation.",
+   "verdict": "ok",
+   "reasons": [],
+   "topics": [
+    "breakouts",
+    "eye_sting",
+    "makeup_pilling"
+   ],
+   "evidence": [
+    "r:dotandkey:2a1bbd68-efbf-4ed2-bcdc-98808171f2f1",
+    "r:dotandkey:20cc8841-d99f-44ed-b495-27ccc15baa6f",
+    "r:dotandkey:b020e747-7067-4edf-b740-b0643524c596",
+    "r:dotandkey:e2d8ae37-247a-47cf-96b7-821c39dad492",
+    "r:dotandkey:71b78de4-6d01-498e-87fb-a40a28869379",
+    "r:dotandkey:11f6c2a2-5f3f-4ea8-9a1e-3a3b33db4bc8",
+    "r:dotandkey:1328d690-7a64-42e1-a93c-cf2d49f1e5bb",
+    "r:dotandkey:ad4a6ae9-83aa-4e91-9c5d-06ded9074424",
+    "r:dotandkey:3b4f4768-02ff-49da-b323-f0153db4f8a0"
+   ]
+  },
+  {
+   "text": "REFRESHING TEXTURE: Infused with watermelon for a cooling sensation that feels refreshing on application.",
+   "verdict": "ok",
+   "reasons": [],
+   "topics": [
+    "texture"
+   ],
+   "evidence": [
+    "r:dotandkey:c92335ec-c5ea-4b9a-b36d-e536d2c0917c",
+    "r:dotandkey:17df123f-dc67-4c24-864e-272f7e2bc367",
+    "r:dotandkey:32bc3ab0-360b-4fd7-a18a-ed8421c4874d"
+   ]
+  },
+  {
+   "text": "BUDGET SMART: Get high-performance, skin-smart sun defense designed specifically for oily skin at just ₹387.",
+   "verdict": "ok",
+   "reasons": [],
+   "topics": [
+    "greasy_sticky"
+   ],
+   "evidence": [
+    "r:dotandkey:c92335ec-c5ea-4b9a-b36d-e536d2c0917c",
+    "r:dotandkey:d51b53ac-16d9-4111-a944-58c651f684e7",
+    "r:dotandkey:6507e10b-251c-4e31-995a-5adb5ebb7606"
+   ]
+  }
+ ],
+ "audit": {
+  "score": 16,
+  "rows": [
+   {
+    "topic": "texture",
+    "label": "Texture & absorption",
+    "mentions": 106,
+    "net": 0.981,
+    "in_listing": false,
+    "action": "Lead with it"
+   },
+   {
+    "topic": "tan_protection",
+    "label": "Tan & sun protection",
+    "mentions": 91,
+    "net": 1.0,
+    "in_listing": false,
+    "action": "Lead with it"
+   },
+   {
+    "topic": "greasy_sticky",
+    "label": "Greasy / sticky",
+    "mentions": 63,
+    "net": 1.0,
+    "in_listing": true,
+    "action": "Keep"
+   },
+   {
+    "topic": "finish",
+    "label": "Finish (matte / dewy)",
+    "mentions": 37,
+    "net": 1.0,
+    "in_listing": false,
+    "action": "Lead with it"
+   },
+   {
+    "topic": "white_cast",
+    "label": "White cast",
+    "mentions": 26,
+    "net": 1.0,
+    "in_listing": false,
+    "action": "Lead with it"
+   },
+   {
+    "topic": "breakouts",
+    "label": "Breakouts / irritation",
+    "mentions": 17,
+    "net": 1.0,
+    "in_listing": false,
+    "action": "Lead with it"
+   },
+   {
+    "topic": "makeup_pilling",
+    "label": "Pilling under makeup",
+    "mentions": 14,
+    "net": 1.0,
+    "in_listing": false,
+    "action": "Lead with it"
+   },
+   {
+    "topic": "fragrance",
+    "label": "Fragrance",
+    "mentions": 11,
+    "net": 1.0,
+    "in_listing": false,
+    "action": "Lead with it"
+   },
+   {
+    "topic": "packaging",
+    "label": "Packaging",
+    "mentions": 7,
+    "net": 1.0,
+    "in_listing": false,
+    "action": "Lead with it"
+   },
+   {
+    "topic": "eye_sting",
+    "label": "Eye sting",
+    "mentions": 5,
+    "net": 1.0,
+    "in_listing": false,
+    "action": "Lead with it"
+   },
+   {
+    "topic": "value",
+    "label": "Value for money",
+    "mentions": 5,
+    "net": 1.0,
+    "in_listing": false,
+    "action": "Lead with it"
+   }
+  ],
+  "covered": [
+   "greasy_sticky"
+  ],
+  "listing_words": 12,
+  "llm": {
+   "covered_topics": [
+    "greasy_sticky"
+   ],
+   "missing_topics": [
+    "texture",
+    "tan_protection",
+    "finish",
+    "white_cast",
+    "breakouts",
+    "makeup_pilling",
+    "fragrance",
+    "packaging",
+    "eye_sting",
+    "value"
+   ],
+   "risky_lines": [],
+   "score_rationale": "The current listing copy is extremely sparse, covering only basic greasy/sticky aspects while completely omitting major customer-loved attributes like lightweight texture, non-greasy non-oily finish, lack of white cast, and absence of eye irritation or breakouts. The rewritten description incorporates these positive customer sentiments along with all factual specifications (SPF 50 PA++++, watermelon ingredients) and addresses common category concerns honestly.",
+   "rewritten_description": "Discover ultimate sun defense with our Watermelon Sunscreen SPF 50+ PA++++, specially formulated with new-age UV filters for oily skin. Customers love its lightweight texture (r:dotandkey:0ca49bc1-d543-4921-86db-474b939fbd86) that absorbs quickly without feeling sticky (r:dotandkey:11ae4ece-9ed8-48e7-ad47-24d4808eae49). Enjoy a non-oily, refreshing finish (r:dotandkey:94188a46-dc7e-4294-835f-52578244d110) that leaves zero white cast (r:dotandkey:11ae4ece-9ed8-48e7-ad47-24d4808eae49). Infused with watermelon (SPEC), it offers reliable tan and sun protection (r:dotandkey:56333e72-1bed-4d29-9491-365eb20e97f6) while keeping your skin safe from acne flare-ups (r:dotandkey:467cbe72-6e31-4a72-b82c-566b39a327cc) and eye irritation (r:dotandkey:11f6c2a2-5f3f-4ea8-9a1e-3a3b33db4bc8). The delightful scent (r:dotandkey:f818a032-d375-4f32-b1cb-417c6ae82f6f) enhances application, and it layers wonderfully under makeup without pilling (r:dotandkey:3b4f4768-02ff-49da-b323-f0153db4f8a0). Housed in travel-friendly packaging (r:dotandkey:8f2194e4-c3ff-4bf9-8973-60a626b278f7), it is truly worth the price (r:dotandkey:4d0d1469-9e87-458e-a502-f24b3f624025).",
+   "evidence": [
+    "r:dotandkey:0ca49bc1-d543-4921-86db-474b939fbd86",
+    "r:dotandkey:11ae4ece-9ed8-48e7-ad47-24d4808eae49",
+    "r:dotandkey:94188a46-dc7e-4294-835f-52578244d110",
+    "r:dotandkey:56333e72-1bed-4d29-9491-365eb20e97f6",
+    "r:dotandkey:f818a032-d375-4f32-b1cb-417c6ae82f6f",
+    "r:dotandkey:4d0d1469-9e87-458e-a502-f24b3f624025",
+    "r:dotandkey:8f2194e4-c3ff-4bf9-8973-60a626b278f7",
+    "r:dotandkey:467cbe72-6e31-4a72-b82c-566b39a327cc",
+    "r:dotandkey:11f6c2a2-5f3f-4ea8-9a1e-3a3b33db4bc8",
+    "r:dotandkey:3b4f4768-02ff-49da-b323-f0153db4f8a0"
+   ]
+  }
+ },
+ "script15": {
+  "title": "Watermelon Sunscreen SPF 50+ PA++++ Ad",
+  "duration_s": 15,
+  "hook": "Metro commute leaving your face a greasy, white mess? Let's fix that.",
+  "frames": [
+   {
+    "t_start": 0.0,
+    "t_end": 2.5,
+    "visual": "Ananya looking at her phone screen in the auto-rickshaw, wiping sweat and squinting at a greasy face in front camera.",
+    "on_screen_text": "Greasy sunscreen ruins the vibe!",
+    "voiceover": "Ugh, another sticky sunscreen disaster.",
+    "scene_prompt": "Inside an auto-rickshaw in Delhi, hazy morning light, urban street blurred in background, vibrant warm tones."
+   },
+   {
+    "t_start": 2.5,
+    "t_end": 5.0,
+    "visual": "She holds up the Watermelon Sunscreen SPF 50+ PA++++ tube, smiling brightly as the sunlight hits.",
+    "on_screen_text": "Meet your skin's new BFF",
+    "voiceover": "Time for a juicy upgrade!",
+    "scene_prompt": "Bright sunny college campus courtyard, lush green trees, youthful aesthetic, cinematic lighting."
+   },
+   {
+    "t_start": 5.0,
+    "t_end": 7.5,
+    "visual": "Dabbing lightweight pink watermelon gel onto her cheek, blending it instantly with zero effort.",
+    "on_screen_text": "Zero white cast, totally light",
+    "voiceover": "It feels super light and airy [m:net:dotandkey:texture|watermelon-cooling-spf-50-face-sunscreen] [r:dotandkey:0ca49bc1-d543-4921-86db-474b939fbd86].",
+    "scene_prompt": "Close-up of clean vanity setup with fresh watermelon slices and dewy morning light."
+   },
+   {
+    "t_start": 7.5,
+    "t_end": 10.0,
+    "visual": "Touching her smooth, non-greasy cheek and smiling at the camera, glowing skin check.",
+    "on_screen_text": "Non-sticky & non-oily finish",
+    "voiceover": "No grease, no stickiness, just pure glow [m:net:dotandkey:finish|watermelon-cooling-spf-50-face-sunscreen] [r:dotandkey:94188a46-dc7e-4294-835f-52578244d110].",
+    "scene_prompt": "A sunny balcony with potted plants, soft natural daylight framing a happy college student."
+   },
+   {
+    "t_start": 10.0,
+    "t_end": 12.5,
+    "visual": "Applying makeup smoothly right over the SPF layer, showing zero pilling.",
+    "on_screen_text": "Layers seamlessly under makeup",
+    "voiceover": "Layers like a dream under makeup [m:net:dotandkey:makeup_pilling|watermelon-cooling-spf-50-face-sunscreen] [r:dotandkey:3b4f4768-02ff-49da-b323-f0153db4f8a0].",
+    "scene_prompt": "Clean aesthetic vanity table with pastel makeup brushes and soft morning sun rays."
+   },
+   {
+    "t_start": 12.5,
+    "t_end": 15.0,
+    "visual": "The Watermelon Sunscreen tube is displayed centrally on a pink pedestal surrounded by fresh watermelon chunks with price ₹387 on screen.",
+    "on_screen_text": "SPF 50+ PA++++ | Only ₹387",
+    "voiceover": "Grab your SPF 50 shield today!",
+    "scene_prompt": "Minimalist pink studio background with juicy watermelons and clean aesthetic lighting."
+   }
+  ],
+  "video_concept": "A high-energy, relatable Gen-Z aesthetic video following a college commuter through a bustling city day. Vibrant pink and green watermelon color palettes pop against sun-kissed outdoor scenes, highlighting effortless skin texture and lightweight sun protection.",
+  "music_mood": "Upbeat indie-pop with playful fruit-stand percussion and breezy summer vibes.",
+  "evidence": [
+   "m:net:dotandkey:texture|watermelon-cooling-spf-50-face-sunscreen",
+   "r:dotandkey:0ca49bc1-d543-4921-86db-474b939fbd86",
+   "m:net:dotandkey:tan_protection|watermelon-cooling-spf-50-face-sunscreen",
+   "m:net:dotandkey:white_cast|watermelon-cooling-spf-50-face-sunscreen",
+   "r:dotandkey:56333e72-1bed-4d29-9491-365eb20e97f6",
+   "m:net:dotandkey:finish|watermelon-cooling-spf-50-face-sunscreen",
+   "r:dotandkey:94188a46-dc7e-4294-835f-52578244d110",
+   "m:net:dotandkey:makeup_pilling|watermelon-cooling-spf-50-face-sunscreen",
+   "m:net:dotandkey:eye_sting|watermelon-cooling-spf-50-face-sunscreen",
+   "r:dotandkey:3b4f4768-02ff-49da-b323-f0153db4f8a0",
+   "r:dotandkey:11f6c2a2-5f3f-4ea8-9a1e-3a3b33db4bc8"
+  ]
+ },
+ "script30": {
+  "title": "Watermelon Sunscreen SPF 50+ PA++++ Oily Skin Ad",
+  "duration_s": 30,
+  "hook": "Sunscreens leaving your face a greasy, white mess on the morning commute?",
+  "frames": [
+   {
+    "t_start": 0.0,
+    "t_end": 5.0,
+    "visual": "Ananya on a crowded Delhi auto-rickshaw, wiping sweat and looking annoyed at her sticky face in a compact mirror.",
+    "on_screen_text": "Sticky sunscreens? Hard pass.",
+    "voiceover": "Sunscreens feeling super greasy on your commute?",
+    "scene_prompt": "A young college student looking frustrated while commuting in a bustling Indian city street during daytime."
+   },
+   {
+    "t_start": 5.0,
+    "t_end": 10.0,
+    "visual": "Close-up of watermelon slices splashing into water droplets, juicy and refreshing, transitioning to the sunscreen tube.",
+    "on_screen_text": "Juicy watermelon hydration!",
+    "voiceover": "Time to swap that sticky mess for juicy watermelon care.",
+    "scene_prompt": "Fresh juicy watermelon slices splashing into clear water with vibrant morning lighting."
+   },
+   {
+    "t_start": 10.0,
+    "t_end": 15.0,
+    "visual": "Ananya dotting the lightweight pink gel sunscreen onto her cheekbones and blending it effortlessly.",
+    "on_screen_text": "Light & non-oily finish",
+    "voiceover": "It has a light, non-oily finish that absorbs effortlessly without feeling sticky m:net:dotandkey:texture|watermelon-cooling-spf-50-face-sunscreen r:dotandkey:0ca49bc1-d543-4921-86db-474b939fbd86 r:dotandkey:94188a46-dc7e-4294-835f-52578244d110.",
+    "scene_prompt": "A bright college dorm room desk with soft morning sun filtering through a window."
+   },
+   {
+    "t_start": 15.0,
+    "t_end": 20.0,
+    "visual": "Ananya taking a quick selfie on her phone, smiling wide with zero white cast in the camera preview.",
+    "on_screen_text": "Zero white cast!",
+    "voiceover": "Experience powerful tan and sun protection with an SPF 50 PA++++ formula that leaves no white cast m:net:dotandkey:tan_protection|watermelon-cooling-spf-50-face-sunscreen m:net:dotandkey:white_cast|watermelon-cooling-spf-50-face-sunscreen r:dotandkey:56333e72-1bed-4d29-9491-365eb20e97f6.",
+    "scene_prompt": "A sunlit campus walkway with lush green trees and a soft out-of-focus background."
+   },
+   {
+    "t_start": 20.0,
+    "t_end": 25.0,
+    "visual": "Applying foundation smoothly right over the set sunscreen, blinking happily with no eye watering.",
+    "on_screen_text": "No pilling, no stinging",
+    "voiceover": "Layer it seamlessly under makeup with zero pilling and no eye irritation m:net:dotandkey:makeup_pilling|watermelon-cooling-spf-50-face-sunscreen m:net:dotandkey:eye_sting|watermelon-cooling-spf-50-face-sunscreen r:dotandkey:3b4f4768-02ff-49da-b323-f0153db4f8a0 r:dotandkey:11f6c2a2-5f3f-4ea8-9a1e-3a3b33db4bc8.",
+    "scene_prompt": "A clean pastel-toned vanity mirror setup with soft glowing ambient lighting."
+   },
+   {
+    "t_start": 25.0,
+    "t_end": 30.0,
+    "visual": "Watermelon Sunscreen SPF 50+ PA++++ bottle featured centrally with fresh watermelon chunks around it, showing the ₹387 price tag.",
+    "on_screen_text": "Get yours for ₹387!",
+    "voiceover": "Grab your new skin-smart shield today for just ₹387!",
+    "scene_prompt": "A minimalist pastel pink podium surrounded by fresh watermelon slices and water splashes."
+   }
+  ],
+  "video_concept": "A vibrant, fast-paced vertical video following a college commuter in Delhi as she ditches her greasy sunscreen for a refreshing, fruit-infused routine. Premium cinematic lighting highlights the juicy watermelon textures and weightless skin finish without any heavy CGI or clutter.",
+  "music_mood": "Upbeat indie-pop with a fruity, bouncy rhythm and cheerful synth beats.",
+  "evidence": [
+   "m:net:dotandkey:texture|watermelon-cooling-spf-50-face-sunscreen",
+   "r:dotandkey:0ca49bc1-d543-4921-86db-474b939fbd86",
+   "r:dotandkey:94188a46-dc7e-4294-835f-52578244d110",
+   "m:net:dotandkey:tan_protection|watermelon-cooling-spf-50-face-sunscreen",
+   "m:net:dotandkey:white_cast|watermelon-cooling-spf-50-face-sunscreen",
+   "r:dotandkey:56333e72-1bed-4d29-9491-365eb20e97f6",
+   "m:net:dotandkey:makeup_pilling|watermelon-cooling-spf-50-face-sunscreen",
+   "m:net:dotandkey:eye_sting|watermelon-cooling-spf-50-face-sunscreen",
+   "r:dotandkey:3b4f4768-02ff-49da-b323-f0153db4f8a0",
+   "r:dotandkey:11f6c2a2-5f3f-4ea8-9a1e-3a3b33db4bc8"
+  ]
+ },
+ "palette": [
+  "#FCC797",
+  "#FAB65A",
+  "#FC8FA1",
+  "#E4462F",
+  "#FF803A"
+ ],
+ "videos": [
+  {
+   "path": "/Users/anshuman.sarda/Desktop/CodeYard_dotnkey/data/outputs/watermelon-cooling-spf-50-face-sunscreen-college_commuter-b9236a/storyboard_en_720x1280.mp4",
+   "duration": 78.3,
+   "voiceover": "sarvam bulbul:v3",
+   "frame_engines": [
+    "cloudflare",
+    "cloudflare",
+    "cloudflare",
+    "cloudflare",
+    "cloudflare",
+    "cloudflare"
+   ],
+   "frames": [
+    "/Users/anshuman.sarda/Desktop/CodeYard_dotnkey/data/outputs/watermelon-cooling-spf-50-face-sunscreen-college_commuter-b9236a/frame_en_0.jpg",
+    "/Users/anshuman.sarda/Desktop/CodeYard_dotnkey/data/outputs/watermelon-cooling-spf-50-face-sunscreen-college_commuter-b9236a/frame_en_1.jpg",
+    "/Users/anshuman.sarda/Desktop/CodeYard_dotnkey/data/outputs/watermelon-cooling-spf-50-face-sunscreen-college_commuter-b9236a/frame_en_2.jpg",
+    "/Users/anshuman.sarda/Desktop/CodeYard_dotnkey/data/outputs/watermelon-cooling-spf-50-face-sunscreen-college_commuter-b9236a/frame_en_3.jpg",
+    "/Users/anshuman.sarda/Desktop/CodeYard_dotnkey/data/outputs/watermelon-cooling-spf-50-face-sunscreen-college_commuter-b9236a/frame_en_4.jpg",
+    "/Users/anshuman.sarda/Desktop/CodeYard_dotnkey/data/outputs/watermelon-cooling-spf-50-face-sunscreen-college_commuter-b9236a/frame_en_5.jpg"
+   ],
+   "lang": "en"
+  }
+ ],
+ "regional": {
+  "hi": {
+   "ad_text": {
+    "headline": "तैलीय त्वचा, आपकी ही तरह है।",
+    "subline": "एक हल्के, गैर-तेलयुक्त फिनिश का आनंद लें जो चिपचिपा महसूस किए बिना आसानी से अवशोषित हो जाता है।",
+    "cta": "ले लीजिये।",
+    "scene_prompt": "Fresh sliced watermelon on a sunlit Delhi balcony with dewy morning condensation."
+   },
+   "on_screen": [
+    "तेलयुक्त सनस्क्रीन माहौल खराब कर देता है!",
+    "आपकी त्वचा के नए सबसे अच्छे दोस्त से मिलिए।",
+    "शून्य सफेद रंग, पूरी तरह से प्रकाश",
+    "गैर-चिपचिपा और गैर-तेलयुक्त बनावट",
+    "मेकअप के नीचे परत दर परत",
+    "एस. पी. एफ. 50+ पी. ए.++++ | केवल ₹387"
+   ],
+   "voiceover": [
+    "ओह, एक और चिपचिपा सनस्क्रीन आपदा।",
+    "एक शानदार उन्नयन का समय है!",
+    "यह बहुत हल्का और हवादार [m:net:dotandkey:texture|watermelon-cooling-spf-50-face-sunscreen] [r:dotandkey:0ca49bc1-d543-4921-86db-474b939fbd86:0.01:0.01] [r:dotandkey:0ca49bc1-d543-4921-86db-474b939fbd86:0.01:0.01] लगता है।",
+    "कोई ग्रीस, कोई चिपचिपाहट नहीं, केवल शुद्ध चमक [m:net:dotandkey:finish|watermelon-cooling-spf-50-face-sunscreen] [r:dotandkey:94188a46-dc7e-4294-835f-52578244d110].",
+    "मेकअप के तहत एक सपने की तरह परतें [m:net:dotandkey:makeup_pilling|watermelon-cooling-spf-50-face-sunscreen] [r:dotandkey:3b4f4768-02ff-49da-b323-f0153db4f8a0]।",
+    "आज ही अपना एस. पी. एफ. 50 का ढाल ले लीजिए!"
+   ],
+   "ads": [
+    {
+     "path": "/Users/anshuman.sarda/Desktop/CodeYard_dotnkey/data/outputs/watermelon-cooling-spf-50-face-sunscreen-college_commuter-b9236a/ad_square_hi.jpg",
+     "engine": "cloudflare",
+     "size": "square",
+     "lang": "hi",
+     "style": "juicy",
+     "label": "Feed 1:1 · 1080×1080"
+    },
+    {
+     "path": "/Users/anshuman.sarda/Desktop/CodeYard_dotnkey/data/outputs/watermelon-cooling-spf-50-face-sunscreen-college_commuter-b9236a/ad_story_hi.jpg",
+     "engine": "cloudflare",
+     "size": "story",
+     "lang": "hi",
+     "style": "juicy",
+     "label": "Story / Reel 9:16 · 1080×1920"
+    }
+   ],
+   "video": {
+    "path": "/Users/anshuman.sarda/Desktop/CodeYard_dotnkey/data/outputs/watermelon-cooling-spf-50-face-sunscreen-college_commuter-b9236a/storyboard_hi_720x1280.mp4",
+    "duration": 94.8,
+    "voiceover": "sarvam bulbul:v3",
+    "frame_engines": [
+     "cloudflare",
+     "cloudflare",
+     "cloudflare",
+     "cloudflare",
+     "cloudflare",
+     "cloudflare"
+    ],
+    "frames": [
+     "/Users/anshuman.sarda/Desktop/CodeYard_dotnkey/data/outputs/watermelon-cooling-spf-50-face-sunscreen-college_commuter-b9236a/frame_hi_0.jpg",
+     "/Users/anshuman.sarda/Desktop/CodeYard_dotnkey/data/outputs/watermelon-cooling-spf-50-face-sunscreen-college_commuter-b9236a/frame_hi_1.jpg",
+     "/Users/anshuman.sarda/Desktop/CodeYard_dotnkey/data/outputs/watermelon-cooling-spf-50-face-sunscreen-college_commuter-b9236a/frame_hi_2.jpg",
+     "/Users/anshuman.sarda/Desktop/CodeYard_dotnkey/data/outputs/watermelon-cooling-spf-50-face-sunscreen-college_commuter-b9236a/frame_hi_3.jpg",
+     "/Users/anshuman.sarda/Desktop/CodeYard_dotnkey/data/outputs/watermelon-cooling-spf-50-face-sunscreen-college_commuter-b9236a/frame_hi_4.jpg",
+     "/Users/anshuman.sarda/Desktop/CodeYard_dotnkey/data/outputs/watermelon-cooling-spf-50-face-sunscreen-college_commuter-b9236a/frame_hi_5.jpg"
+    ],
+    "lang": "hi"
+   }
+  },
+  "bn": {
+   "ad_text": {
+    "headline": "তৈলাক্ত ত্বক, আপনার উপযুক্ত।",
+    "subline": "আঠালো না মনে হয় এমন সহজে শোষণকারী হালকা, অ-তেলযুক্ত সমাপ্তি উপভোগ করুন।",
+    "cta": "নিন।",
+    "scene_prompt": "Fresh sliced watermelon on a sunlit Delhi balcony with dewy morning condensation."
+   },
+   "on_screen": [
+    "তৈলাক্ত সানস্ক্রিন পরিবেশ নষ্ট করে দেয়!",
+    "আপনার ত্বকের নতুন বন্ধুকে দেখাও।",
+    "শূন্য সাদা রঙ, সম্পূর্ণ আলোকিত",
+    "নন-স্টিকি ও নন-তেলযুক্ত",
+    "লেয়ার মেকআপের অধীনে অবিচ্ছিন্নভাবে",
+    "এসপিএফ 50+ পিএ++++ | মাত্র 387 টাকা"
+   ],
+   "voiceover": [
+    "উহ, আরও একটি আঠালো সানস্ক্রিন বিপর্যয়।",
+    "সময় এসেছে একটি উন্নত জুয়ার জন্য!",
+    "এটি খুব হালকা এবং বাতাসযুক্ত অনুভূত হয় [m:net:dotandkey:texture|watermelon-cooling-spf-50-face-sunscreen] [r:dotandkey:0ca49bc1-d543-4921-86db-474b939fbd86:0.01:0.01:0.01:0.01:0.01:0.01:0.01:0.01:0.01:0.01:0.01:0.01:0.01:0.01:0.01:0.01:0.01:0.01:0.01:0.01:0.01:0.01:0.01:0.01:0.01:0.01:0.01:0.01:0.01:0.01:0.01:0.01:0.01:0.01:0.0",
+    "কোনও গ্রীস, কোনও আঠালো, কেবল বিশুদ্ধ উজ্জ্বলতা [m:net:dotandkey:finish|watermelon-cooling-spf-50-face-sunscreen] [r:dotandkey:94188a46-dc7e-4294-835f-52578244d110].",
+    "মেকআপের অধীনে স্বপ্নের মতো স্তরগুলি [m:net:dotandkey:makeup_pilling|watermelon-cooling-spf-50-face-sunscreen] [r:dotandkey:3b4f4768-02ff-49da-b323-f0153db4f8a0:3b4f4768-02ff-49da-b323-f0153db4f8a0] ।",
+    "আজ থেকেই আপনার এস.পি.এফ 5೦ರ ঢালটি নিয়ে নিন!"
+   ],
+   "ads": [
+    {
+     "path": "/Users/anshuman.sarda/Desktop/CodeYard_dotnkey/data/outputs/watermelon-cooling-spf-50-face-sunscreen-college_commuter-b9236a/ad_square_bn.jpg",
+     "engine": "cloudflare",
+     "size": "square",
+     "lang": "bn",
+     "style": "juicy",
+     "label": "Feed 1:1 · 1080×1080"
+    },
+    {
+     "path": "/Users/anshuman.sarda/Desktop/CodeYard_dotnkey/data/outputs/watermelon-cooling-spf-50-face-sunscreen-college_commuter-b9236a/ad_story_bn.jpg",
+     "engine": "cloudflare",
+     "size": "story",
+     "lang": "bn",
+     "style": "juicy",
+     "label": "Story / Reel 9:16 · 1080×1920"
+    }
+   ],
+   "video": {
+    "path": "/Users/anshuman.sarda/Desktop/CodeYard_dotnkey/data/outputs/watermelon-cooling-spf-50-face-sunscreen-college_commuter-b9236a/storyboard_bn_720x1280.mp4",
+    "duration": 129.6,
+    "voiceover": "sarvam bulbul:v3",
+    "frame_engines": [
+     "cloudflare",
+     "cloudflare",
+     "cloudflare",
+     "cloudflare",
+     "cloudflare",
+     "cloudflare"
+    ],
+    "frames": [
+     "/Users/anshuman.sarda/Desktop/CodeYard_dotnkey/data/outputs/watermelon-cooling-spf-50-face-sunscreen-college_commuter-b9236a/frame_bn_0.jpg",
+     "/Users/anshuman.sarda/Desktop/CodeYard_dotnkey/data/outputs/watermelon-cooling-spf-50-face-sunscreen-college_commuter-b9236a/frame_bn_1.jpg",
+     "/Users/anshuman.sarda/Desktop/CodeYard_dotnkey/data/outputs/watermelon-cooling-spf-50-face-sunscreen-college_commuter-b9236a/frame_bn_2.jpg",
+     "/Users/anshuman.sarda/Desktop/CodeYard_dotnkey/data/outputs/watermelon-cooling-spf-50-face-sunscreen-college_commuter-b9236a/frame_bn_3.jpg",
+     "/Users/anshuman.sarda/Desktop/CodeYard_dotnkey/data/outputs/watermelon-cooling-spf-50-face-sunscreen-college_commuter-b9236a/frame_bn_4.jpg",
+     "/Users/anshuman.sarda/Desktop/CodeYard_dotnkey/data/outputs/watermelon-cooling-spf-50-face-sunscreen-college_commuter-b9236a/frame_bn_5.jpg"
+    ],
+    "lang": "bn"
+   }
+  }
+ },
+ "engines": {
+  "brief": "llm",
+  "ads": "llm",
+  "ecom": "llm",
+  "audit": "llm",
+  "script15": "llm",
+  "script30": "llm"
+ },
+ "status": "regional_ready",
+ "hero": null,
+ "image_pref": [
+  "cloudflare",
+  "template"
+ ],
+ "renders": {
+  "0:juicy": [
+   {
+    "path": "/Users/anshuman.sarda/Desktop/CodeYard_dotnkey/data/outputs/watermelon-cooling-spf-50-face-sunscreen-college_commuter-b9236a/ad_c1_juicy_square_en.jpg",
+    "engine": "cloudflare",
+    "size": "square",
+    "lang": "en",
+    "style": "juicy",
+    "label": "Feed 1:1 · 1080×1080"
+   },
+   {
+    "path": "/Users/anshuman.sarda/Desktop/CodeYard_dotnkey/data/outputs/watermelon-cooling-spf-50-face-sunscreen-college_commuter-b9236a/ad_c1_juicy_story_en.jpg",
+    "engine": "cloudflare",
+    "size": "story",
+    "lang": "en",
+    "style": "juicy",
+    "label": "Story / Reel 9:16 · 1080×1920"
+   },
+   {
+    "path": "/Users/anshuman.sarda/Desktop/CodeYard_dotnkey/data/outputs/watermelon-cooling-spf-50-face-sunscreen-college_commuter-b9236a/ad_c1_juicy_aplus_en.jpg",
+    "engine": "cloudflare",
+    "size": "aplus",
+    "lang": "en",
+    "style": "juicy",
+    "label": "Amazon A+ · 970×600"
+   }
+  ],
+  "0:clinical": [
+   {
+    "path": "/Users/anshuman.sarda/Desktop/CodeYard_dotnkey/data/outputs/watermelon-cooling-spf-50-face-sunscreen-college_commuter-b9236a/ad_c1_clinical_square_en.jpg",
+    "engine": "cloudflare",
+    "size": "square",
+    "lang": "en",
+    "style": "clinical",
+    "label": "Feed 1:1 · 1080×1080"
+   },
+   {
+    "path": "/Users/anshuman.sarda/Desktop/CodeYard_dotnkey/data/outputs/watermelon-cooling-spf-50-face-sunscreen-college_commuter-b9236a/ad_c1_clinical_story_en.jpg",
+    "engine": "cloudflare",
+    "size": "story",
+    "lang": "en",
+    "style": "clinical",
+    "label": "Story / Reel 9:16 · 1080×1920"
+   },
+   {
+    "path": "/Users/anshuman.sarda/Desktop/CodeYard_dotnkey/data/outputs/watermelon-cooling-spf-50-face-sunscreen-college_commuter-b9236a/ad_c1_clinical_aplus_en.jpg",
+    "engine": "cloudflare",
+    "size": "aplus",
+    "lang": "en",
+    "style": "clinical",
+    "label": "Amazon A+ · 970×600"
+   }
+  ],
+  "0:lifestyle": [
+   {
+    "path": "/Users/anshuman.sarda/Desktop/CodeYard_dotnkey/data/outputs/watermelon-cooling-spf-50-face-sunscreen-college_commuter-b9236a/ad_c1_lifestyle_square_en.jpg",
+    "engine": "cloudflare",
+    "size": "square",
+    "lang": "en",
+    "style": "lifestyle",
+    "label": "Feed 1:1 · 1080×1080"
+   },
+   {
+    "path": "/Users/anshuman.sarda/Desktop/CodeYard_dotnkey/data/outputs/watermelon-cooling-spf-50-face-sunscreen-college_commuter-b9236a/ad_c1_lifestyle_story_en.jpg",
+    "engine": "cloudflare",
+    "size": "story",
+    "lang": "en",
+    "style": "lifestyle",
+    "label": "Story / Reel 9:16 · 1080×1920"
+   },
+   {
+    "path": "/Users/anshuman.sarda/Desktop/CodeYard_dotnkey/data/outputs/watermelon-cooling-spf-50-face-sunscreen-college_commuter-b9236a/ad_c1_lifestyle_aplus_en.jpg",
+    "engine": "cloudflare",
+    "size": "aplus",
+    "lang": "en",
+    "style": "lifestyle",
+    "label": "Amazon A+ · 970×600"
+   }
+  ],
+  "1:juicy": [
+   {
+    "path": "/Users/anshuman.sarda/Desktop/CodeYard_dotnkey/data/outputs/watermelon-cooling-spf-50-face-sunscreen-college_commuter-b9236a/ad_c2_juicy_square_en.jpg",
+    "engine": "cloudflare",
+    "size": "square",
+    "lang": "en",
+    "style": "juicy",
+    "label": "Feed 1:1 · 1080×1080"
+   },
+   {
+    "path": "/Users/anshuman.sarda/Desktop/CodeYard_dotnkey/data/outputs/watermelon-cooling-spf-50-face-sunscreen-college_commuter-b9236a/ad_c2_juicy_story_en.jpg",
+    "engine": "cloudflare",
+    "size": "story",
+    "lang": "en",
+    "style": "juicy",
+    "label": "Story / Reel 9:16 · 1080×1920"
+   },
+   {
+    "path": "/Users/anshuman.sarda/Desktop/CodeYard_dotnkey/data/outputs/watermelon-cooling-spf-50-face-sunscreen-college_commuter-b9236a/ad_c2_juicy_aplus_en.jpg",
+    "engine": "cloudflare",
+    "size": "aplus",
+    "lang": "en",
+    "style": "juicy",
+    "label": "Amazon A+ · 970×600"
+   }
+  ],
+  "1:clinical": [
+   {
+    "path": "/Users/anshuman.sarda/Desktop/CodeYard_dotnkey/data/outputs/watermelon-cooling-spf-50-face-sunscreen-college_commuter-b9236a/ad_c2_clinical_square_en.jpg",
+    "engine": "cloudflare",
+    "size": "square",
+    "lang": "en",
+    "style": "clinical",
+    "label": "Feed 1:1 · 1080×1080"
+   },
+   {
+    "path": "/Users/anshuman.sarda/Desktop/CodeYard_dotnkey/data/outputs/watermelon-cooling-spf-50-face-sunscreen-college_commuter-b9236a/ad_c2_clinical_story_en.jpg",
+    "engine": "cloudflare",
+    "size": "story",
+    "lang": "en",
+    "style": "clinical",
+    "label": "Story / Reel 9:16 · 1080×1920"
+   },
+   {
+    "path": "/Users/anshuman.sarda/Desktop/CodeYard_dotnkey/data/outputs/watermelon-cooling-spf-50-face-sunscreen-college_commuter-b9236a/ad_c2_clinical_aplus_en.jpg",
+    "engine": "cloudflare",
+    "size": "aplus",
+    "lang": "en",
+    "style": "clinical",
+    "label": "Amazon A+ · 970×600"
+   }
+  ],
+  "1:lifestyle": [
+   {
+    "path": "/Users/anshuman.sarda/Desktop/CodeYard_dotnkey/data/outputs/watermelon-cooling-spf-50-face-sunscreen-college_commuter-b9236a/ad_c2_lifestyle_square_en.jpg",
+    "engine": "cloudflare",
+    "size": "square",
+    "lang": "en",
+    "style": "lifestyle",
+    "label": "Feed 1:1 · 1080×1080"
+   },
+   {
+    "path": "/Users/anshuman.sarda/Desktop/CodeYard_dotnkey/data/outputs/watermelon-cooling-spf-50-face-sunscreen-college_commuter-b9236a/ad_c2_lifestyle_story_en.jpg",
+    "engine": "cloudflare",
+    "size": "story",
+    "lang": "en",
+    "style": "lifestyle",
+    "label": "Story / Reel 9:16 · 1080×1920"
+   },
+   {
+    "path": "/Users/anshuman.sarda/Desktop/CodeYard_dotnkey/data/outputs/watermelon-cooling-spf-50-face-sunscreen-college_commuter-b9236a/ad_c2_lifestyle_aplus_en.jpg",
+    "engine": "cloudflare",
+    "size": "aplus",
+    "lang": "en",
+    "style": "lifestyle",
+    "label": "Amazon A+ · 970×600"
+   }
+  ],
+  "2:juicy": [
+   {
+    "path": "/Users/anshuman.sarda/Desktop/CodeYard_dotnkey/data/outputs/watermelon-cooling-spf-50-face-sunscreen-college_commuter-b9236a/ad_c3_juicy_square_en.jpg",
+    "engine": "cloudflare",
+    "size": "square",
+    "lang": "en",
+    "style": "juicy",
+    "label": "Feed 1:1 · 1080×1080"
+   },
+   {
+    "path": "/Users/anshuman.sarda/Desktop/CodeYard_dotnkey/data/outputs/watermelon-cooling-spf-50-face-sunscreen-college_commuter-b9236a/ad_c3_juicy_story_en.jpg",
+    "engine": "cloudflare",
+    "size": "story",
+    "lang": "en",
+    "style": "juicy",
+    "label": "Story / Reel 9:16 · 1080×1920"
+   },
+   {
+    "path": "/Users/anshuman.sarda/Desktop/CodeYard_dotnkey/data/outputs/watermelon-cooling-spf-50-face-sunscreen-college_commuter-b9236a/ad_c3_juicy_aplus_en.jpg",
+    "engine": "cloudflare",
+    "size": "aplus",
+    "lang": "en",
+    "style": "juicy",
+    "label": "Amazon A+ · 970×600"
+   }
+  ],
+  "2:clinical": [
+   {
+    "path": "/Users/anshuman.sarda/Desktop/CodeYard_dotnkey/data/outputs/watermelon-cooling-spf-50-face-sunscreen-college_commuter-b9236a/ad_c3_clinical_square_en.jpg",
+    "engine": "cloudflare",
+    "size": "square",
+    "lang": "en",
+    "style": "clinical",
+    "label": "Feed 1:1 · 1080×1080"
+   },
+   {
+    "path": "/Users/anshuman.sarda/Desktop/CodeYard_dotnkey/data/outputs/watermelon-cooling-spf-50-face-sunscreen-college_commuter-b9236a/ad_c3_clinical_story_en.jpg",
+    "engine": "cloudflare",
+    "size": "story",
+    "lang": "en",
+    "style": "clinical",
+    "label": "Story / Reel 9:16 · 1080×1920"
+   },
+   {
+    "path": "/Users/anshuman.sarda/Desktop/CodeYard_dotnkey/data/outputs/watermelon-cooling-spf-50-face-sunscreen-college_commuter-b9236a/ad_c3_clinical_aplus_en.jpg",
+    "engine": "cloudflare",
+    "size": "aplus",
+    "lang": "en",
+    "style": "clinical",
+    "label": "Amazon A+ · 970×600"
+   }
+  ],
+  "2:lifestyle": [
+   {
+    "path": "/Users/anshuman.sarda/Desktop/CodeYard_dotnkey/data/outputs/watermelon-cooling-spf-50-face-sunscreen-college_commuter-b9236a/ad_c3_lifestyle_square_en.jpg",
+    "engine": "cloudflare",
+    "size": "square",
+    "lang": "en",
+    "style": "lifestyle",
+    "label": "Feed 1:1 · 1080×1080"
+   },
+   {
+    "path": "/Users/anshuman.sarda/Desktop/CodeYard_dotnkey/data/outputs/watermelon-cooling-spf-50-face-sunscreen-college_commuter-b9236a/ad_c3_lifestyle_story_en.jpg",
+    "engine": "cloudflare",
+    "size": "story",
+    "lang": "en",
+    "style": "lifestyle",
+    "label": "Story / Reel 9:16 · 1080×1920"
+   },
+   {
+    "path": "/Users/anshuman.sarda/Desktop/CodeYard_dotnkey/data/outputs/watermelon-cooling-spf-50-face-sunscreen-college_commuter-b9236a/ad_c3_lifestyle_aplus_en.jpg",
+    "engine": "cloudflare",
+    "size": "aplus",
+    "lang": "en",
+    "style": "lifestyle",
+    "label": "Amazon A+ · 970×600"
+   }
+  ]
+ },
+ "selected": {
+  "variant": 0,
+  "style": "juicy"
+ },
+ "fruit": "watermelon"
+}

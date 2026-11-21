@@ -112,7 +112,7 @@ def render_storyboard_video(product: dict, script: dict, palette: list[str], out
     n_total = int(round(total * FPS))
     proc = subprocess.Popen([ffmpeg_exe(), "-y", "-hide_banner", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24",
                              "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-", "-i", str(audio_path), "-c:v", "libx264",
-                             "-preset", "veryfast", "-crf", "21", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "128k",
+                             "-preset", "medium", "-crf", "27", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "128k",
                              "-shortest", "-movflags", "+faststart", str(out)], stdin=subprocess.PIPE, stderr=subprocess.PIPE)
 
     def kb(i: int, t: float) -> np.ndarray:
