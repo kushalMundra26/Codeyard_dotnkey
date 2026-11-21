@@ -318,9 +318,16 @@ def save_campaign(c: dict) -> None:
     (d / "campaign.json").write_text(json.dumps(c, ensure_ascii=False, indent=1, default=str), encoding="utf-8")
 
 
+def _rebase(text: str) -> str:
+    """Asset paths are stored absolute; re-anchor them to this machine's data/outputs (hosted copies, clones)."""
+    import re
+    base = str(OUTPUTS).replace("\\", "/")
+    return re.sub(r'"[^"]*?/data/outputs/', lambda m: '"' + base + "/", text)
+
+
 def load_campaign(cid: str) -> dict | None:
     p = OUTPUTS / cid / "campaign.json"
-    return json.loads(p.read_text(encoding="utf-8")) if p.exists() else None
+    return json.loads(_rebase(p.read_text(encoding="utf-8"))) if p.exists() else None
 
 
 def list_campaigns() -> list[dict]:
